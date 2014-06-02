@@ -1,4 +1,3 @@
-$stderr.puts "\n#{__FILE__}:#{__LINE__} => #{$".inspect}"
 require 'caliph'
 require 'caliph/testing/mock-command-line'
 

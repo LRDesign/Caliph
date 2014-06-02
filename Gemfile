@@ -5,5 +5,5 @@ gem 'fuubar'
 #gem 'redcarpet'
 gem 'rake'
 gem 'rspec', '< 3.0.0'
-#gem 'cadre'
+gem 'cadre'
 gemspec
