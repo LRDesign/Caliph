@@ -1,0 +1,1 @@
+require 'caliph/command-line'
