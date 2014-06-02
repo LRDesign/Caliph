@@ -1,6 +1,8 @@
 require 'rspec'
 require 'rspec/core/formatters/base_formatter'
 require 'file-sandbox'
+
+require 'caliph'
 #require 'cadre/rspec'
 
 RSpec.configure do |config|
