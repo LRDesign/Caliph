@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   author_list = { "Evan Dorn" => 'evan@lrdesign.com', "Judson Lester" => 'judson@lrdesign.com' }
   spec.authors		= author_list.keys
   spec.email		= spec.authors.map {|name| author_list[name]}
-  spec.summary		= ""
+  spec.summary		= "TDD-suitable Ruby tool for generating command-line commands via an OOP interface."
   spec.description	= <<-EndDescription
     TDD-suitable Ruby tool for generating command-line commands via an OOP interface.
   EndDescription
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
     lib/caliph/testing/mock-command-line.rb
     lib/caliph/testing/record-commands.rb
     lib/caliph.rb
-    spec/command-line_spec.rb
+    spec/command-line.rb
     spec_help/spec_helper.rb
   ]
 
