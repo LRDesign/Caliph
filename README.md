@@ -34,6 +34,8 @@ These classes were originally writtenas part of Mattock by Judson Lester:  https
 
 ### Output with environment variables
 
+Convert the command to a string  with `string_format`
+
     command = cmd('java', 'my_file.jar')
     command.env['JAVA_HOME'] = '~/java_files'
 
@@ -42,7 +44,7 @@ These classes were originally writtenas part of Mattock by Judson Lester:  https
 
 ### Output without environment variables
 
-You might need to exclude the environment variables and pass them elsewise, if for example you are executing this command over ssh.
+You might need to exclude the environment variables and pass them elsewise, if for example you are executing this command over ssh.  The method `command` produces just the command and arguments without prepending env.
 
     command = cmd('java', 'my_file.jar')
     command.env['JAVA_HOME'] = '~/java_files'
@@ -54,12 +56,12 @@ You might need to exclude the environment variables and pass them elsewise, if f
 
 `Caliph::CommandChain` and related classes implement chained commands, including operators &, |, and - for conditional, pipe, and path-chaining.
 
-#### Pipe
+#### Pipe Chain
 
     # find . -name '*.sw.' | xargs rm
      cmd('find', '.', "-name '*.sw.'") | cmd('xargs', 'rm')
 
-#### Conditionals
+#### Conditional Chain
 
 Ruby operator `&` produces a command-line and-chain with `&&`
 
