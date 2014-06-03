@@ -131,6 +131,7 @@ describe Caliph::CommandLineDSL do
 
   describe "using the & operator" do
     let :command do
+      p method(:cmd).source_location
       cmd("cd", "/tmp/trash") & %w{rm -rf *}
     end
 
