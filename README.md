@@ -32,49 +32,28 @@ These classes were originally writtenas part of Mattock by Judson Lester:  https
     command.env['RAILS_ENV'] = 'production
 
 
-### Output with environment variables
+### Chaining commands
 
-Convert the command to a string  with `string_format`
+`Caliph::CommandChain` and related classes implement chained commands.  If you've mixed in Caliph::CommandLineDSL, you can use operators &, |, and - for conditional, pipe, and path-chaining, respectively.
 
-    command = cmd('java', 'my_file.jar')
-    command.env['JAVA_HOME'] = '~/java_files'
-
-    # outputs "JAVA_HOME='~/java_files' java my_file.jar"
-    command.string_format
-
-### Output without environment variables
-
-You might need to exclude the environment variables and pass them elsewise, if for example you are executing this command over ssh.  The method `command` produces just the command and arguments without prepending env.
-
-    command = cmd('java', 'my_file.jar')
-    command.env['JAVA_HOME'] = '~/java_files'
-
-    # outputs "java my_file.jar"
-    command.command
-
-### Chaining of commands
-
-`Caliph::CommandChain` and related classes implement chained commands, including operators &, |, and - for conditional, pipe, and path-chaining.
-
-#### Pipe Chain
-
+    # Pipe Chain
     # find . -name '*.sw.' | xargs rm
-     cmd('find', '.', "-name '*.sw.'") | cmd('xargs', 'rm')
+    cmd('find', '.', "-name '*.sw.'") | cmd('xargs', 'rm')
 
-#### Conditional Chain
 
-Ruby operator `&` produces a command-line and-chain with `&&`
-
+    # && - style conditional chain
     # cd /tmp/trash && rm -rf *
     cmd("cd", "/tmp/trash") & %w{rm -rf *}
 
-#### double-hyphen separator
-
-Ruby operator `-` produces a command-line path-chain with `--`
-
+    # Double-hyphen separated commands
     # sudo -- gem install bundler
     cmd("sudo") - ["gem", "install", "bundler"]
 
-### Redirect Output
+### Redirecting Output
 
 TODO
+
+### Execute commands and capture the output
+
+TODO
+

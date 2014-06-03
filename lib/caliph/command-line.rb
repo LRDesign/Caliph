@@ -92,7 +92,7 @@ module Caliph
     end
 
     def replace_us
-      output_steeam.puts "Ceding execution to: "
+      output_stream.puts "Ceding execution to: "
       output_stream.puts string_format
       Process.exec(command_environment, command)
     end
