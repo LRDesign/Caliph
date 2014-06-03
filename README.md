@@ -37,7 +37,7 @@ These classes were originally writtenas part of Mattock by Judson Lester:  https
     command = cmd('java', 'my_file.jar')
     command.env['JAVA_HOME'] = '~/java_files'
 
-    # JAVA_HOME='~/java_files' java my_file.jar
+    # outputs "JAVA_HOME='~/java_files' java my_file.jar"
     command.string_format
 
 ### Output without environment variables
@@ -47,7 +47,7 @@ You might need to exclude the environment variables and pass them elsewise, if f
     command = cmd('java', 'my_file.jar')
     command.env['JAVA_HOME'] = '~/java_files'
 
-    # java my_file.jar
+    # outputs "java my_file.jar"
     command.command
 
 ### Chaining of commands
@@ -57,14 +57,14 @@ You might need to exclude the environment variables and pass them elsewise, if f
 #### Pipe
 
     # find . -name '*.sw.' | xargs rm
-    command = cmd('find', '.', "-name '*.sw.'") | cmd('xargs', 'rm')
+     cmd('find', '.', "-name '*.sw.'") | cmd('xargs', 'rm')
 
 #### Conditionals
 
 Ruby operator `&` produces a command-line and-chain with `&&`
 
     # cd /tmp/trash && rm -rf *
-    command = cmd("cd", "/tmp/trash") & %w{rm -rf *}
+    cmd("cd", "/tmp/trash") & %w{rm -rf *}
 
 #### double-hyphen separator
 
@@ -73,6 +73,6 @@ Ruby operator `-` produces a command-line path-chain with `--`
     # sudo -- gem install bundler
     cmd("sudo") - ["gem", "install", "bundler"]
 
+### Redirect Output
 
-
-
+TODO
