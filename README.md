@@ -51,7 +51,21 @@ These classes were originally writtenas part of Mattock by Judson Lester:  https
 
 ### Redirecting Output
 
-TODO
+    # redirect STDOUT
+    # echo "foo" 1>some_file.txt
+    cmd('echo').redirect_stdout('some_file.txt')
+
+    # redirect STDERR
+    # echo "foo" 2>error_file.txt
+    cmd('echo').redirect_stderr('error_file.txt')
+
+    # chain redirects
+    # curl http://LRDesign.com 1>page.html 2>progress.txt
+    cmd('curl', 'http://LRDesign.com').redirect_stdout('page.html').redirect_stdin('progress.txt')
+
+    # redirect STDOUT and STDERR to the same destination with one command
+    # rm -rf 1>/dev/null 2>/dev/null
+    cmd('rm', '-rf').redirect('/dev/nul')
 
 ### Execute commands and capture the output
 
