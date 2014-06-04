@@ -31,6 +31,19 @@ These classes were originally writtenas part of Mattock by Judson Lester:  https
     command = cmd('rake', 'db:migrate')
     command.env['RAILS_ENV'] = 'production
 
+### See the commands
+
+`Caliph::CommandLine#string_format` or `#to_s` returns the entire command.  `Caliph::CommandLine#command` returns just the command portion without prepended environment variables, which might be handy if you're passing the command to ssh or sudo and need to handle ENV differently.
+
+    command = cmd('java', 'my_file.jar')
+    command.env['JAVA_HOME'] = '~/java_files'
+
+    # outputs "JAVA_HOME='~/java_files' java my_file.jar"
+    command.string_format   # or .to_s
+
+    # outputs "java my_file.jar"
+    command.command
+
 
 ### Chaining commands
 
@@ -65,7 +78,7 @@ These classes were originally writtenas part of Mattock by Judson Lester:  https
 
     # redirect STDOUT and STDERR to the same destination with one command
     # rm -rf 1>/dev/null 2>/dev/null
-    cmd('rm', '-rf').redirect('/dev/nul')
+    cmd('rm', '-rf').redirect_both('/dev/null')
 
 ### Execute commands and capture the output
 

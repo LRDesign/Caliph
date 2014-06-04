@@ -92,7 +92,7 @@ describe Caliph::CommandLine, 'redirecting' do
   end
 
   it 'should redirect both' do
-    commandline.redirect('output_file')
+    commandline.redirect_both('output_file')
     result.should =~ /\b1>output_file\b/
     result.should =~ /\b2>output_file\b/
   end

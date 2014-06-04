@@ -92,7 +92,7 @@ module Caliph
       redirect_from(path, 0)
     end
 
-    def redirect(path)
+    def redirect_both(path)
       redirect_stdout(path).redirect_stderr(path)
     end
 
