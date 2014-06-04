@@ -90,6 +90,12 @@ describe Caliph::CommandLine, 'redirecting' do
     result.should =~ /\b1>stdout_file\b/
     result.should =~ /\b2>stderr_file\b/
   end
+
+  it 'should redirect both' do
+    commandline.redirect('output_file')
+    result.should =~ /\b1>output_file\b/
+    result.should =~ /\b2>output_file\b/
+  end
 end
 
 describe Caliph::PipelineChain do

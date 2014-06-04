@@ -92,6 +92,10 @@ module Caliph
       redirect_from(path, 0)
     end
 
+    def redirect(path)
+      redirect_stdout(path).redirect_stderr(path)
+    end
+
     def replace_us
       output_stream.puts "Ceding execution to: "
       output_stream.puts string_format
