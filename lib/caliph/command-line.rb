@@ -69,6 +69,7 @@ module Caliph
 
     def redirect_to(stream, path)
       @redirections << "#{stream}>#{path}"
+      self
     end
 
     def redirect_from(path, stream)

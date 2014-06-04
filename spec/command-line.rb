@@ -66,6 +66,32 @@ describe Caliph::CommandLine, "setting environment variables" do
 
 end
 
+describe Caliph::CommandLine, 'redirecting' do
+  let :commandline do
+    Caliph::CommandLine.new("env")
+  end
+
+  let :result do
+    commandline.string_format
+  end
+
+  it 'should allow redirect stdout' do
+    commandline.redirect_stdout('some_file')
+    result.should =~ /1>some_file$/
+  end
+
+  it 'should allow redirect stderr' do
+    commandline.redirect_stderr('some_file')
+    result.should =~ /2>some_file$/
+  end
+
+  it 'should allow chain redirects' do
+    commandline.redirect_stdout('stdout_file').redirect_stderr('stderr_file')
+    result.should =~ /\b1>stdout_file\b/
+    result.should =~ /\b2>stderr_file\b/
+  end
+end
+
 describe Caliph::PipelineChain do
   let :commandline do
     Caliph::PipelineChain.new do |chain|
