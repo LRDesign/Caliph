@@ -82,5 +82,7 @@ These classes were originally writtenas part of Mattock by Judson Lester:  https
 
 ### Execute commands and capture the output
 
-TODO
+Run commands with `run`.  Output streams and exit code will be automatically captured for you, inspectable via Ruby-friendly methods.
+
+    cmd('curl', )
 
