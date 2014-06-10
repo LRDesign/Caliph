@@ -1,5 +1,5 @@
 module Caliph
-  class CommandChain < CommandLine
+  class CommandChain
     def initialize
       @commands = []
       @command_environment = {}
