@@ -17,12 +17,19 @@ Gem::Specification.new do |spec|
   # Do this: y$@"
   # !!find lib bin doc spec spec_help -not -regex '.*\.sw.' -type f 2>/dev/null
   spec.files		= %w[
+    lib/caliph/command-chain.rb
     lib/caliph/command-line/command-run-result.rb
+    lib/caliph/command-line-dsl.rb
     lib/caliph/command-line.rb
+    lib/caliph/define-op.rb
+    lib/caliph/shell-escaped.rb
     lib/caliph/testing/mock-command-line.rb
     lib/caliph/testing/record-commands.rb
     lib/caliph.rb
+    spec/command-chain.rb
+    spec/command-line-dsl.rb
     spec/command-line.rb
+    spec_help/gem_test_suite.rb
     spec_help/spec_helper.rb
   ]
 

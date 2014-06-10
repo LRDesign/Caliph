@@ -1,28 +1,11 @@
+require 'caliph/define-op'
 require 'caliph/command-line/command-run-result'
 
 module Caliph
   class CommandLine
+    include DefineOp
+
     class << self
-      def define_chain_op(opname, klass)
-        define_method(opname) do |other|
-          unless CommandLine === other
-            other = CommandLine.new(*[*other])
-          end
-          chain = nil
-          if klass === self
-            chain = self
-          else
-            chain = klass.new
-            chain.add(self)
-          end
-          chain.add(other)
-        end
-      end
-
-      def define_op(opname)
-        CommandLine.define_chain_op(opname, self)
-      end
-
       attr_accessor :output_stream
     end
 
@@ -178,77 +161,4 @@ module Caliph
   end
 
 
-  class ShellEscaped < CommandLine
-    def initialize(cmd)
-      @escaped = cmd
-    end
-
-    def command
-      "'" + @escaped.string_format.gsub(/'/,"\'") + "'"
-    end
-
-    def command_environment
-      {}
-    end
-
-    def name
-      @name || @escaped.name
-    end
-
-    def to_s
-      command
-    end
-  end
-
-  class CommandChain < CommandLine
-    def initialize
-      @commands = []
-      @command_environment = {}
-      super(nil)
-    end
-
-    attr_reader :commands
-
-    def add(cmd)
-      yield cmd if block_given?
-      @commands << cmd
-      self
-    end
-
-    #Honestly this is sub-optimal - biggest driver for considering the
-    #mini-shell approach here.
-    def command_environment
-      @command_environment = @commands.reverse.inject(@command_environment) do |env, command|
-        env.merge(command.command_environment)
-      end
-    end
-
-    def name
-      @name || @commands.last.name
-    end
-  end
-
-  class WrappingChain < CommandChain
-    define_op('-')
-
-    def command
-      @commands.map{|cmd| cmd.command}.join(" -- ")
-    end
-  end
-
-  class PrereqChain < CommandChain
-    define_op('&')
-
-    def command
-      @commands.map{|cmd| cmd.command}.join(" && ")
-    end
-  end
-
-  class PipelineChain < CommandChain
-    define_op('|')
-
-    def command
-      @commands.map{|cmd| cmd.command}.join(" | ")
-    end
-  end
 end

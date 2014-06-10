@@ -1,5 +1,9 @@
+require 'caliph/define-op'
+
 module Caliph
-  class CommandChain
+  class CommandChain < CommandLine
+    include DefineOp
+
     def initialize
       @commands = []
       @command_environment = {}
