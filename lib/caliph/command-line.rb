@@ -36,10 +36,13 @@ module Caliph
       @name || executable
     end
 
+    # The command as a string, including arguments and options
     def command
       ([executable] + options_composition + @redirections).join(" ")
     end
 
+    # The command as a string, including arguments and options, plus prefixed
+    # environment variables.
     def string_format
       (command_environment.map do |key, value|
         [key, value].join("=")
@@ -79,21 +82,36 @@ module Caliph
       redirect_stdout(path).redirect_stderr(path)
     end
 
+    # Fork a new process for the command, then terminate our process.
     def replace_us
       output_stream.puts "Ceding execution to: "
       output_stream.puts string_format
       Process.exec(command_environment, command)
     end
 
-    def spawn_process
-      host_stdout, cmd_stdout = IO.pipe
-      host_stderr, cmd_stderr = IO.pipe
+    # Run the command in the background.  The command can survive the caller.
+    def spin_off
+      pid, out, err = spawn_process
+      Process.detach(pid)
+      return pid, out, err
+    end
 
-      pid = Process.spawn(command_environment, command, :out => cmd_stdout, :err => cmd_stderr)
-      cmd_stdout.close
-      cmd_stderr.close
+    # Run the command, wait for termination, and collect the results.
+    # Returns an instance of CommandRunResult that contains the output
+    # and exit code of the command.
+    def execute
+      collect_result(*spawn_process)
+    end
 
-      return pid, host_stdout, host_stderr
+    # Run the command in parallel with the parent process - will kill it if it
+    # outlasts us
+    def background
+      pid, out, err = spawn_process
+      Process.detach(pid)
+      at_exit do
+        kill_process(pid)
+      end
+      return pid, out, err
     end
 
     def collect_result(pid, host_stdout, host_stderr)
@@ -103,30 +121,6 @@ module Caliph
       return result
     end
 
-    #If I wasn't worried about writing my own limited shell, I'd say e.g.
-    #Pipeline would be an explicit chain of pipes... which is probably as
-    #originally intended :/
-    def execute
-      collect_result(*spawn_process)
-    end
-
-    #Run a command in the background.  The command can survive the caller
-    def spin_off
-      pid, out, err = spawn_process
-      Process.detach(pid)
-      return pid, out, err
-    end
-
-    #Run a command in parallel with the parent process - will kill it if it
-    #outlasts us
-    def background
-      pid, out, err = spawn_process
-      Process.detach(pid)
-      at_exit do
-        kill_process(pid)
-      end
-      return pid, out, err
-    end
 
     def kill_process(pid)
       Process.kill("INT", pid)
@@ -158,6 +152,19 @@ module Caliph
     def must_succeed!
       run.must_succeed!
     end
+
+    def spawn_process
+      host_stdout, cmd_stdout = IO.pipe
+      host_stderr, cmd_stderr = IO.pipe
+
+      pid = Process.spawn(command_environment, command, :out => cmd_stdout, :err => cmd_stderr)
+      cmd_stdout.close
+      cmd_stderr.close
+
+      return pid, host_stdout, host_stderr
+    end
+
+
   end
 
 

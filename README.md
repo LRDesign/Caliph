@@ -82,7 +82,23 @@ These classes were originally writtenas part of Mattock by Judson Lester:  https
 
 ### Execute commands and capture the output
 
-Run commands with `run`.  Output streams and exit code will be automatically captured for you, inspectable via Ruby-friendly methods.
+Several instance methods are provided for running commands.
 
-    cmd('curl', )
+• `#execute` Run the command and wait for the result.  Returns a `CommandRunResult` instance.
+• `#replace_us`  Run the command in a new process and kill this process.
+• `#spin_off` Run the command as a new background process.  It can continue even if the caller terminates.
+• `#background` Run the command as a background process, but kill it if the caller terminates
+
+
+### Examine the results of a command
+
+`Caliph::CommandLine#execute` returns a `Caliph::CommandRunResult` instance.  `CommandRunResult` has the following useful instance methods:
+
+• `#stdout` A String containing the contents of STDOUT.
+• `#stderr` A String containing the contents of STDERR.
+• `#exit_code` The exit code of the command
+• `#succeded?` True if `exit_code` is 0.
+• `#must_succeed!` Calls `fail` with an error message if the command did not exit successfully.
+
+
 
