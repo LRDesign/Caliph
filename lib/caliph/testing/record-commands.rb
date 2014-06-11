@@ -1,4 +1,4 @@
-require 'mattock/command-line'
+require 'caliph/command-line'
 
 module Caliph
   class CommandLine

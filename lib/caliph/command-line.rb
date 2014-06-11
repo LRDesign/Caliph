@@ -82,30 +82,49 @@ module Caliph
       redirect_stdout(path).redirect_stderr(path)
     end
 
+    # Run the command, wait for termination, and collect the results.
+    # Returns an instance of CommandRunResult that contains the output
+    # and exit code of the command.
+    #
+    # This version adds some information to STDOUT to document that the
+    # command is running.  For a terser version, call #execute directly
+    def run
+      report string_format + " ", false
+      result = execute
+      report "=> #{result.exit_code}"
+      report result.format_streams if verbose
+      return result
+    ensure
+      report "" if verbose
+    end
+
     # Fork a new process for the command, then terminate our process.
-    def replace_us
+    def run_as_replacement
       output_stream.puts "Ceding execution to: "
       output_stream.puts string_format
       Process.exec(command_environment, command)
     end
+    alias replace_us run_as_replacement
 
     # Run the command in the background.  The command can survive the caller.
-    def spin_off
+    def run_detached
       pid, out, err = spawn_process
       Process.detach(pid)
       return pid, out, err
     end
+    alias spin_off run_detached
 
     # Run the command, wait for termination, and collect the results.
     # Returns an instance of CommandRunResult that contains the output
     # and exit code of the command.
+    #
     def execute
       collect_result(*spawn_process)
     end
 
     # Run the command in parallel with the parent process - will kill it if it
     # outlasts us
-    def background
+    def run_in_background
       pid, out, err = spawn_process
       Process.detach(pid)
       at_exit do
@@ -113,7 +132,11 @@ module Caliph
       end
       return pid, out, err
     end
+    alias background run_in_background
 
+    # Given a process ID for a running command and a pair of stdout/stdin
+    # streams, records the results of the command and returns them in a
+    # CommandRunResult instance.
     def collect_result(pid, host_stdout, host_stderr)
       result = CommandRunResult.new(pid, self)
       result.streams = {1 => host_stdout, 2 => host_stderr}
@@ -135,15 +158,6 @@ module Caliph
       output_stream.print(message + (newline ? "\n" : ""))
     end
 
-    def run
-      report string_format + " ", false
-      result = execute
-      report "=> #{result.exit_code}"
-      report result.format_streams if verbose
-      return result
-    ensure
-      report "" if verbose
-    end
 
     def succeeds?
       run.succeeded?
