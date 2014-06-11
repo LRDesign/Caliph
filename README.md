@@ -130,4 +130,6 @@ Caliph includes some useful classes for mocking out the command line environment
 
 Further documentation on testing coming soon!
 
+## Credits
 
+Evan Dorn and Judson Lester of Logical Reality Design, Inc.
