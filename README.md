@@ -84,21 +84,21 @@ The first version of these classes were originally written as part of Mattock by
 
 Several instance methods are provided for running commands.
 
-• `#execute` Run the command and wait for the result.  Returns a `CommandRunResult` instance.
-• `#replace_us`  Run the command in a new process and kill this process.
-• `#spin_off` Run the command as a new background process.  It can continue even if the caller terminates.
-• `#background` Run the command as a background process, but kill it if the caller terminates
+* `#execute` Run the command and wait for the result.  Returns a `CommandRunResult` instance.
+* `#replace_us`  Run the command in a new process and kill this process.
+* `#spin_off` Run the command as a new background process.  It can continue even if the caller terminates.
+* `#background` Run the command as a background process, but kill it if the caller terminates
 
 
 ### Examine the results of a command
 
 `Caliph::CommandLine#execute` returns a `Caliph::CommandRunResult` instance.  `CommandRunResult` has the following useful instance methods:
 
-• `#stdout` A String containing the contents of STDOUT.
-• `#stderr` A String containing the contents of STDERR.
-• `#exit_code` The exit code of the command
-• `#succeded?` True if `exit_code` is 0.
-• `#must_succeed!` Calls `fail` with an error message if the command did not exit successfully.
+* `#stdout` A String containing the contents of STDOUT.
+* `#stderr` A String containing the contents of STDERR.
+* `#exit_code` The exit code of the command
+* `#succeded?` True if `exit_code` is 0.
+* `#must_succeed!` Calls `fail` with an error message if the command did not exit successfully.
 
 
 
