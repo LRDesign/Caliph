@@ -1,10 +1,10 @@
 # Caliph
 
-Caliph - TDD-suitable Ruby tool for generating command-line commands via an OOP interface.
+Caliph - a Ruby tool for generating and executing command-line commands.
 
 Does your Ruby script or app need to generate commands to run at the CLI, to run with system() or similar?  Want to generate them in a clean, testable Ruby api? How about automatically capturing output, exit code, and other goodies?
 
-These classes were originally writtenas part of Mattock by Judson Lester:  https://github.com/nyarly/mattock
+The first version of these classes were originally written as part of Mattock by Judson Lester:  https://github.com/nyarly/mattock
 
 ## Usage Examples
 
