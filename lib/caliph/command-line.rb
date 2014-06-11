@@ -1,5 +1,5 @@
 require 'caliph/define-op'
-require 'caliph/command-line/command-run-result'
+require 'caliph/command-run-result'
 
 module Caliph
   class CommandLine

@@ -30,19 +30,6 @@ describe Caliph::CommandLine do
     end.to_not raise_error
   end
 
-  describe Caliph::CommandLine::CommandRunResult do
-    let :result do
-      commandline.run
-    end
-
-    it "should have a result code" do
-      result.exit_code.should == 0
-    end
-
-    it "should have stdout" do
-      result.stdout.should == "Some text"
-    end
-  end
 end
 
 describe Caliph::CommandLine, "setting environment variables" do

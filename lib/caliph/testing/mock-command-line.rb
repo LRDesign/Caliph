@@ -1,7 +1,7 @@
 require 'caliph/command-line'
 
 module Caliph
-  class MockCommandResult < CommandLine::CommandRunResult
+  class MockCommandResult < CommandRunResult
     def self.create(*args)
       if args.length == 1
         args = [args[0], {1 => ""}]
