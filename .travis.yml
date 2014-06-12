@@ -1,2 +1,3 @@
 language: ruby
-script: CODECLIMATE_REPO_TOKEN=29dae821c614b8d8b4482312bec81b43fb8747fe05f939a58cb874aeb0990784 bundle exec rake ci
+  script: CODECLIMATE_REPO_TOKEN=0f1ffbdd403d9cdd080093828a676417f0043feb9bcbda01e7b82a9471989c42 bundle exec rake ci
+
