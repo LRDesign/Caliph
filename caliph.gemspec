@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.name		= "caliph"
   #{MAJOR: incompatible}.{MINOR added feature}.{PATCH bugfix}-{LABEL}
-  spec.version		= "0.0.1"
+  spec.version		= "0.1.0"
   author_list = { "Evan Dorn" => 'evan@lrdesign.com', "Judson Lester" => 'judson@lrdesign.com' }
   spec.authors		= author_list.keys
   spec.email		= spec.authors.map {|name| author_list[name]}
@@ -18,9 +18,9 @@ Gem::Specification.new do |spec|
   # !!find lib bin doc spec spec_help -not -regex '.*\.sw.' -type f 2>/dev/null
   spec.files		= %w[
     lib/caliph/command-chain.rb
-    lib/caliph/command-line/command-run-result.rb
     lib/caliph/command-line-dsl.rb
     lib/caliph/command-line.rb
+    lib/caliph/command-run-result.rb
     lib/caliph/define-op.rb
     lib/caliph/shell-escaped.rb
     lib/caliph/testing/mock-command-line.rb

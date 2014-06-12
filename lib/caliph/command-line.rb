@@ -11,7 +11,7 @@ module Caliph
 
     def initialize(executable, *options)
       @output_stream = self.class.output_stream || $stderr
-      @executable = executable
+      @executable = executable.to_s
       @options = options
       @redirections = []
       @env = {}
