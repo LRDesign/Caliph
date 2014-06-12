@@ -1,17 +1,16 @@
 Gem::Specification.new do |spec|
   spec.name		= "caliph"
   #{MAJOR: incompatible}.{MINOR added feature}.{PATCH bugfix}-{LABEL}
-  spec.version		= "0.1.0"
-  author_list = { "Evan Dorn" => 'evan@lrdesign.com', "Judson Lester" => 'judson@lrdesign.com' }
+  spec.version		= "0.1.1"
+  author_list     = { "Evan Dorn" => 'evan@lrdesign.com', "Judson Lester" => 'judson@lrdesign.com' }
   spec.authors		= author_list.keys
-  spec.email		= spec.authors.map {|name| author_list[name]}
+  spec.email		  = spec.authors.map {|name| author_list[name]}
   spec.summary		= "TDD-suitable Ruby tool for generating command-line commands via an OOP interface."
-  spec.description	= <<-EndDescription
+  spec.description = <<-EndDescription
     TDD-suitable Ruby tool for generating command-line commands via an OOP interface.
   EndDescription
 
-  spec.rubyforge_project= spec.name.downcase
-  spec.homepage        = ""
+  spec.homepage        = "https://github.com/LRDesign/Caliph"
   spec.required_rubygems_version = Gem::Requirement.new(">= 0") if spec.respond_to? :required_rubygems_version=
 
   # Do this: y$@"
@@ -32,7 +31,6 @@ Gem::Specification.new do |spec|
     spec_help/gem_test_suite.rb
     spec_help/spec_helper.rb
   ]
-
 
   spec.test_file        = "spec_help/gem_test_suite.rb"
   spec.licenses = ["MIT"]
