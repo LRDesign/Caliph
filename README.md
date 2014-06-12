@@ -7,7 +7,7 @@ Does your Ruby script or app need to generate commands to run at the CLI, to run
 The first version of these classes were originally written as part of Mattock by Judson Lester:  https://github.com/nyarly/mattock
 
 [![Code Climate](https://codeclimate.com/github/LRDesign/Caliph.png)](https://codeclimate.com/github/LRDesign/Caliph)
-[![Build Status](https://travis-ci.org/LRDesign/Caliph.svg?branch=master)](https://travis-ci.org/LRDesign/Caliph.svg?branch=master)
+[![Build Status](https://travis-ci.org/LRDesign/Caliph.svg?branch=master)](https://travis-ci.org/LRDesign/Caliph)
 [![Dependency Status](https://gemnasium.com/LRDesign/Caliph.svg)](https://gemnasium.com/LRDesign/Caliph)
 
 
