@@ -8,6 +8,8 @@ The first version of these classes were originally written as part of Mattock by
 
 [![Code Climate](https://codeclimate.com/github/LRDesign/Caliph.png)](https://codeclimate.com/github/LRDesign/Caliph)
 [![Build Status](https://travis-ci.org/LRDesign/Caliph.svg?branch=master)](https://travis-ci.org/LRDesign/Caliph.svg?branch=master)
+[![Dependency Status](https://gemnasium.com/LRDesign/Caliph.svg)](https://gemnasium.com/LRDesign/Caliph)
+
 
 ## Usage Examples
 
