@@ -12,10 +12,10 @@ describe Caliph::CommandRunResult do
   end
 
   it "should have a result code" do
-    result.exit_code.should == 0
+    expect(result.exit_code).to eq(0)
   end
 
   it "should have stdout" do
-    result.stdout.should == "Some text"
+    expect(result.stdout).to eq("Some text")
   end
 end

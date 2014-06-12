@@ -9,11 +9,11 @@ describe Caliph::CommandLineDSL do
     end
 
     it "should define commands" do
-      command.should be_an_instance_of(Caliph::WrappingChain)
-      command.should have(2).commands
-      command.commands[0].should be_an_instance_of(Caliph::CommandLine)
-      command.commands[1].should be_an_instance_of(Caliph::CommandLine)
-      command.command.should == "sudo -- gem install bundler"
+      expect(command).to be_an_instance_of(Caliph::WrappingChain)
+      expect(command.commands.size).to eq(2)
+      expect(command.commands[0]).to be_an_instance_of(Caliph::CommandLine)
+      expect(command.commands[1]).to be_an_instance_of(Caliph::CommandLine)
+      expect(command.command).to eq("sudo -- gem install bundler")
     end
   end
 
@@ -23,11 +23,11 @@ describe Caliph::CommandLineDSL do
     end
 
     it "should define commands" do
-      command.should be_an_instance_of(Caliph::PipelineChain)
-      command.should have(2).commands
-      command.commands[0].should be_an_instance_of(Caliph::CommandLine)
-      command.commands[1].should be_an_instance_of(Caliph::CommandLine)
-      command.command.should == "cat /etc/passwd | grep root"
+      expect(command).to be_an_instance_of(Caliph::PipelineChain)
+      expect(command.commands.size).to eq(2)
+      expect(command.commands[0]).to be_an_instance_of(Caliph::CommandLine)
+      expect(command.commands[1]).to be_an_instance_of(Caliph::CommandLine)
+      expect(command.command).to eq("cat /etc/passwd | grep root")
     end
   end
 
@@ -38,11 +38,11 @@ describe Caliph::CommandLineDSL do
     end
 
     it "should define commands" do
-      command.should be_an_instance_of(Caliph::PrereqChain)
-      command.should have(2).commands
-      command.commands[0].should be_an_instance_of(Caliph::CommandLine)
-      command.commands[1].should be_an_instance_of(Caliph::CommandLine)
-      command.command.should == "cd /tmp/trash && rm -rf *"
+      expect(command).to be_an_instance_of(Caliph::PrereqChain)
+      expect(command.commands.size).to eq(2)
+      expect(command.commands[0]).to be_an_instance_of(Caliph::CommandLine)
+      expect(command.commands[1]).to be_an_instance_of(Caliph::CommandLine)
+      expect(command.command).to eq("cd /tmp/trash && rm -rf *")
     end
   end
 end

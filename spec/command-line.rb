@@ -13,15 +13,15 @@ describe Caliph::CommandLine do
   end
 
   it "should have a name set" do
-    commandline.name.should == "echo"
+    expect(commandline.name).to eq("echo")
   end
 
   it "should produce a command string" do
-    commandline.command.should == "echo -n Some text"
+    expect(commandline.command).to eq("echo -n Some text")
   end
 
   it "should succeed" do
-    commandline.succeeds?.should be_true
+    expect(commandline.succeeds?).to be_truthy
   end
 
   it "should not complain about success" do
@@ -44,11 +44,11 @@ describe Caliph::CommandLine, "setting environment variables" do
   end
 
   it "should succeed" do
-    result.succeeded?.should be_true
+    expect(result.succeeded?).to be_truthy
   end
 
   it "should alter the command's environment variables" do
-    result.stdout.should =~ /TEST_ENV.*indubitably/
+    expect(result.stdout).to match(/TEST_ENV.*indubitably/)
   end
 
 end
@@ -64,24 +64,24 @@ describe Caliph::CommandLine, 'redirecting' do
 
   it 'should allow redirect stdout' do
     commandline.redirect_stdout('some_file')
-    result.should =~ /1>some_file$/
+    expect(result).to match(/1>some_file$/)
   end
 
   it 'should allow redirect stderr' do
     commandline.redirect_stderr('some_file')
-    result.should =~ /2>some_file$/
+    expect(result).to match(/2>some_file$/)
   end
 
   it 'should allow chain redirects' do
     commandline.redirect_stdout('stdout_file').redirect_stderr('stderr_file')
-    result.should =~ /\b1>stdout_file\b/
-    result.should =~ /\b2>stderr_file\b/
+    expect(result).to match(/\b1>stdout_file\b/)
+    expect(result).to match(/\b2>stderr_file\b/)
   end
 
   it 'should redirect both' do
     commandline.redirect_both('output_file')
-    result.should =~ /\b1>output_file\b/
-    result.should =~ /\b2>output_file\b/
+    expect(result).to match(/\b1>output_file\b/)
+    expect(result).to match(/\b2>output_file\b/)
   end
 end
 
@@ -100,19 +100,19 @@ describe Caliph::PipelineChain do
   end
 
   it "should produce the right command" do
-    commandline.command.should == 'env | cat'
+    expect(commandline.command).to eq('env | cat')
   end
 
   it "should produce a runnable command with format_string" do
-    commandline.string_format.should == 'TEST_ENV=indubitably env | cat'
+    expect(commandline.string_format).to eq('TEST_ENV=indubitably env | cat')
   end
 
   it "should succeed" do
-    result.succeeded?.should be_true
+    expect(result.succeeded?).to be_truthy
   end
 
   it "should alter the command's environment variables" do
-    result.stdout.should =~ /TEST_ENV.*indubitably/
+    expect(result.stdout).to match(/TEST_ENV.*indubitably/)
   end
 end
 
@@ -124,7 +124,7 @@ describe Caliph::CommandLine, "that fails" do
   end
 
   it "should not succeed" do
-    commandline.succeeds?.should == false
+    expect(commandline.succeeds?).to eq(false)
   end
 
   it "should raise error if succeed demanded" do
