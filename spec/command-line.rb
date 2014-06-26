@@ -116,8 +116,6 @@ describe Caliph::PipelineChain do
   end
 end
 
-
-
 describe Caliph::CommandLine, "that fails" do
   let :commandline do
     Caliph::CommandLine.new("false")

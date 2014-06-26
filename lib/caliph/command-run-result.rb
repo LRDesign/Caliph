@@ -97,7 +97,7 @@ module Caliph
       end
 
       if @process_status.nil?
-        newpid, @process_status = Process.waitpid2(pid)
+        newpid, @process_status = Process.waitpid2(pid).tap{|value| puts "#{__FILE__}:#{__LINE__} => #{value.inspect}"}
       end
 
       ioes.each do |io|

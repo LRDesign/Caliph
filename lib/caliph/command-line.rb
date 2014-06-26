@@ -9,9 +9,9 @@ module Caliph
       attr_accessor :output_stream
     end
 
-    def initialize(executable, *options)
+    def initialize(executable = nil, *options)
       @output_stream = self.class.output_stream || $stderr
-      @executable = executable.to_s
+      @executable = executable.to_s unless executable.nil?
       @options = options
       @redirections = []
       @env = {}
@@ -22,6 +22,10 @@ module Caliph
     attr_reader :redirections
 
     alias_method :command_environment, :env
+
+    def valid?
+      !@executable.nil?
+    end
 
     def set_env(name, value)
       command_environment[name] = value
@@ -147,6 +151,8 @@ module Caliph
 
     def kill_process(pid)
       Process.kill("INT", pid)
+    rescue Errno::ESRCH
+      warn "Couldn't find process #{pid} to kill it"
     end
 
     def complete(pid, out, err)
@@ -157,7 +163,6 @@ module Caliph
     def report(message, newline=true)
       output_stream.print(message + (newline ? "\n" : ""))
     end
-
 
     def succeeds?
       run.succeeded?
