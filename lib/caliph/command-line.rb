@@ -86,105 +86,44 @@ module Caliph
       redirect_stdout(path).redirect_stderr(path)
     end
 
-    # Run the command, wait for termination, and collect the results.
-    # Returns an instance of CommandRunResult that contains the output
-    # and exit code of the command.
-    #
-    # This version adds some information to STDOUT to document that the
-    # command is running.  For a terser version, call #execute directly
+    #:nocov:
+    #@deprecated
     def run
-      report string_format + " ", false
-      result = execute
-      report "=> #{result.exit_code}"
-      report result.format_streams if verbose
-      return result
-    ensure
-      report "" if verbose
+      Caliph.new.run(self)
     end
 
-    # Fork a new process for the command, then terminate our process.
+    #@deprecated
     def run_as_replacement
-      output_stream.puts "Ceding execution to: "
-      output_stream.puts string_format
-      Process.exec(command_environment, command)
+      Caliph.new.run_as_replacement(self)
     end
     alias replace_us run_as_replacement
 
-    # Run the command in the background.  The command can survive the caller.
+    #@deprecated
     def run_detached
-      pid, out, err = spawn_process
-      Process.detach(pid)
-      return pid, out, err
+      Caliph.new.run_detached(self)
     end
     alias spin_off run_detached
 
-    # Run the command, wait for termination, and collect the results.
-    # Returns an instance of CommandRunResult that contains the output
-    # and exit code of the command.
-    #
+    #@deprecated
     def execute
-      collect_result(*spawn_process)
+      Caliph.new.execute(self)
     end
 
-    # Run the command in parallel with the parent process - will kill it if it
-    # outlasts us
+    #@deprecated
     def run_in_background
-      pid, out, err = spawn_process
-      Process.detach(pid)
-      at_exit do
-        kill_process(pid)
-      end
-      return pid, out, err
+      Caliph.new.run_in_background(self)
     end
     alias background run_in_background
 
-    # Given a process ID for a running command and a pair of stdout/stdin
-    # streams, records the results of the command and returns them in a
-    # CommandRunResult instance.
-    def collect_result(pid, host_stdout, host_stderr)
-      result = CommandRunResult.new(pid, self)
-      result.streams = {1 => host_stdout, 2 => host_stderr}
-      result.wait
-      return result
-    end
-
-
-    def kill_process(pid)
-      Process.kill("INT", pid)
-    rescue Errno::ESRCH
-      warn "Couldn't find process #{pid} to kill it"
-    end
-
-    def complete(pid, out, err)
-      kill_process(pid)
-      collect_result(pid, out, err)
-    end
-
-    def report(message, newline=true)
-      output_stream.print(message + (newline ? "\n" : ""))
-    end
-
+    #@deprecated
     def succeeds?
       run.succeeded?
     end
 
+    #@deprecated
     def must_succeed!
       run.must_succeed!
     end
-
-    def spawn_process
-      host_stdout, cmd_stdout = IO.pipe
-      host_stderr, cmd_stderr = IO.pipe
-
-      pid = Process.spawn(command_environment, command, :out => cmd_stdout, :err => cmd_stderr)
-      cmd_stdout.close
-      cmd_stderr.close
-
-      return pid, host_stdout, host_stderr
-    end
-
-
+    #:nocov:
   end
-
-
 end

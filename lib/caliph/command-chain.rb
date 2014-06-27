@@ -12,6 +12,10 @@ module Caliph
 
     attr_reader :commands
 
+    def valid?
+      commands.all?{|cmd| cmd.valid?}
+    end
+
     def add(cmd)
       yield cmd if block_given?
       @commands << cmd
@@ -55,4 +59,3 @@ module Caliph
     end
   end
 end
-

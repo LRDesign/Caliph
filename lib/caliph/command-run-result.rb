@@ -46,6 +46,12 @@ module Caliph
       end
     end
 
+    def kill
+      Process.kill("INT", pid)
+    rescue Errno::ESRCH
+      warn "Couldn't find process #{pid} to kill it"
+    end
+
     def wait
       @accumulators = {}
       waits = {}
@@ -97,7 +103,7 @@ module Caliph
       end
 
       if @process_status.nil?
-        newpid, @process_status = Process.waitpid2(pid).tap{|value| puts "#{__FILE__}:#{__LINE__} => #{value.inspect}"}
+        newpid, @process_status = Process.waitpid2(pid)
       end
 
       ioes.each do |io|

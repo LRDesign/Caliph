@@ -4,6 +4,14 @@ module Caliph
   class Shell
     attr_accessor :verbose, :output_stream
 
+    def output_stream
+      @output_stream ||= $stderr
+    end
+
+    def verbose
+      @verbose ||= false
+    end
+
     def report_verbose(message)
       report(message) if verbose
     end
