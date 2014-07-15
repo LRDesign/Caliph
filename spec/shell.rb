@@ -42,9 +42,9 @@ describe Caliph::Shell do
     end
 
     it "should run valid results of block-defined CommandLines" do
-      expect( test_run do |cmd|
+      expect( test_run {|cmd|
           cmd.executable = "grep"
-        end).to be_a(Caliph::CommandRunResult)
+      }).to be_a(Caliph::CommandRunResult)
     end
 
     it "should run a passed CommandLine" do
@@ -53,6 +53,19 @@ describe Caliph::Shell do
       allow(mock_command).to receive(:command).and_return("echo I'm testing here!")
       allow(mock_command).to receive(:command_environment).and_return({"TESTING" => "Oh, indeed"})
       expect(test_run(mock_command)).to be_a(Caliph::CommandRunResult)
+    end
+  end
+
+  describe "#run with strings)" do
+    it "should run a passed CommandLine" do
+      allow(Caliph::CommandLine).to receive(:new).and_return(mock_command)
+
+      allow(mock_command).to receive(:valid?).and_return(true)
+      allow(mock_command).to receive(:string_format).and_return("TESTING='Oh, indeed' echo I'm testing here!")
+      allow(mock_command).to receive(:command).and_return("echo I'm testing here!")
+      allow(mock_command).to receive(:command_environment).and_return({"TESTING" => "Oh, indeed"})
+
+      expect(shell.run("ls", "-la")).to be_a(Caliph::CommandRunResult)
     end
   end
 

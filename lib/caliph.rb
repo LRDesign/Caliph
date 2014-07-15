@@ -1,4 +1,6 @@
 module Caliph
+  # Returns an instance of the default {Shell}
+  # @todo add alternative shells - e.g. SSHShell
   def self.new
     Shell.new
   end

@@ -15,10 +15,11 @@ module Caliph
       @options = options
       @redirections = []
       @env = {}
+      @verbose = false
       yield self if block_given?
     end
 
-    attr_accessor :name, :executable, :options, :env, :output_stream
+    attr_accessor :name, :executable, :options, :env, :output_stream, :verbose
     attr_reader :redirections
 
     alias_method :command_environment, :env
@@ -30,10 +31,6 @@ module Caliph
     def set_env(name, value)
       command_environment[name] = value
       return self
-    end
-
-    def verbose
-      #::Rake.verbose && ::Rake.verbose != ::Rake::FileUtilsExt::DEFAULT
     end
 
     def name
@@ -62,6 +59,8 @@ module Caliph
       self
     end
 
+    # Waits for the process to complete. If this takes longer that
+    # {consume_timeout},
     def redirect_from(path, stream)
       @redirections << "#{stream}<#{path}"
     end
@@ -87,29 +86,29 @@ module Caliph
     end
 
     #:nocov:
-    #@deprecated
+    #@deprecated (see: Shell)
     def run
       Caliph.new.run(self)
     end
 
-    #@deprecated
+    #@deprecated (see: Shell)
     def run_as_replacement
       Caliph.new.run_as_replacement(self)
     end
     alias replace_us run_as_replacement
 
-    #@deprecated
+    #@deprecated (see: Shell)
     def run_detached
       Caliph.new.run_detached(self)
     end
     alias spin_off run_detached
 
-    #@deprecated
+    #@deprecated (see: Shell)
     def execute
       Caliph.new.execute(self)
     end
 
-    #@deprecated
+    #@deprecated (see: Shell)
     def run_in_background
       Caliph.new.run_in_background(self)
     end

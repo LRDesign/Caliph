@@ -1,30 +1,55 @@
 module Caliph
+  # This is the Caliph handle on a run process - it can be used to send signals
+  # to running processes, wait for them to complete, get their exit status once
+  # they have, and watch their streams in either case.
   class CommandRunResult
-    def initialize(pid, command)
+    def initialize(pid, command, shell)
       @command = command
       @pid = pid
+      @shell = shell
 
       #####
       @process_status = nil
       @streams = {}
       @consume_timeout = nil
     end
-    attr_reader :process_status, :pid
+
+    attr_reader :process_status
+
+    attr_reader :pid, :command
     attr_accessor :consume_timeout, :streams
 
+    # Access the stdout of the process
     def stdout
       @streams[1]
     end
 
+    # Access the stderr of the process
     def stderr
       @streams[2]
     end
 
+    # @return [exit_code] the raw exit of the process
+    # @return [nil] the process is still running
     def exit_code
-      @process_status.exitstatus
+      if @process_status.nil?
+        return nil
+      else
+        @process_status.exitstatus
+      end
     end
     alias exit_status exit_code
 
+    # Check whether the process is still running
+    # @return [true] the process is still running
+    # @return [false] the process has completed
+    def running?
+      !@process_status.nil?
+    end
+
+    # Confirm that the process exited with a successful exit code (i.e. 0).
+    # This is pretty reliable, but many applications return bad exit statuses -
+    # 0 when they failed, usually.
     def succeeded?
       must_succeed!
       return true
@@ -32,11 +57,14 @@ module Caliph
       return false
     end
 
+    # Nicely formatted output of stdout and stderr - won't be intermixed, which
+    # may be different than what you'd see live in the shell
     def format_streams
       "stdout:#{stdout.nil? || stdout.empty? ? "[empty]\n" : "\n#{stdout}"}" +
       "stderr:#{stderr.nil? || stderr.empty? ? "[empty]\n" : "\n#{stderr}"}---"
     end
 
+    # Demands that the process succeed, or else raises and error
     def must_succeed!
       case exit_code
       when 0
@@ -46,12 +74,19 @@ module Caliph
       end
     end
 
-    def kill
-      Process.kill("INT", pid)
+    # Stop a running process. Sends SIGINT by default which about like hitting
+    # Control-C.
+    # @param signal the Unix signal to send to the process
+    def kill(signal = nil)
+      Process.kill(signal || "INT", pid)
     rescue Errno::ESRCH
       warn "Couldn't find process #{pid} to kill it"
     end
 
+    # Waits for the process to complete. If this takes longer that
+    # {consume_timeout}, output on the process's streams will be output via
+    # {Shell#report} - very useful when compilation or network transfers are
+    # taking a long time.
     def wait
       @accumulators = {}
       waits = {}
@@ -79,9 +114,9 @@ module Caliph
         if !@buffered_echo.nil?
           timeout = begin_echoing - Time.now
           if timeout < 0
-            @command.report ""
-            @command.report "Long running command output:"
-            @command.report @buffered_echo.join
+            @shell.report ""
+            @shell.report "Long running command output:"
+            @shell.report @buffered_echo.join
             @buffered_echo = nil
           end
         end
@@ -118,7 +153,7 @@ module Caliph
           begin
             while chunk = io.read_nonblock(4096)
               if @buffered_echo.nil?
-                @command.report chunk, false
+                @shell.report chunk, false
               else
                 @buffered_echo << chunk
               end
