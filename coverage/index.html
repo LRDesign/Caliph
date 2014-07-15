@@ -14,7 +14,7 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-07-15T00:58:02-07:00">2014-07-15T00:58:02-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-07-15T01:04:42-07:00">2014-07-15T01:04:42-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         6.3
+         6.37
        </span>
     </span> hits/line)
   </h2>
@@ -97,7 +97,7 @@
         <td>81</td>
         <td>71</td>
         <td>10</td>
-        <td>9.7</td>
+        <td>10.0</td>
       </tr>
       
       <tr>
@@ -2154,8 +2154,8 @@
           <code class="ruby">      until @live_ioes.empty? do</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="105">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="18" data-linenumber="105">
+          <span class="hits">18</span>
           
           <code class="ruby">        newpid, @process_status = Process.waitpid2(pid, Process::WNOHANG)</code>
         </li>
@@ -2166,20 +2166,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="107">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="18" data-linenumber="107">
+          <span class="hits">18</span>
           
           <code class="ruby">        unless @process_status.nil?</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="108">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="108">
+          <span class="hits">6</span>
           
           <code class="ruby">          consume_buffers(@live_ioes)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="109">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="109">
+          <span class="hits">6</span>
           
           <code class="ruby">          break</code>
         </li>
@@ -2196,8 +2196,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="112">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="112">
+          <span class="hits">12</span>
           
           <code class="ruby">        timeout = 0</code>
         </li>
@@ -2208,20 +2208,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="114">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="114">
+          <span class="hits">12</span>
           
           <code class="ruby">        if !@buffered_echo.nil?</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="115">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="115">
+          <span class="hits">12</span>
           
           <code class="ruby">          timeout = begin_echoing - Time.now</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="116">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="116">
+          <span class="hits">12</span>
           
           <code class="ruby">          if timeout &lt; 0</code>
         </li>
@@ -2268,14 +2268,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="124">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="124">
+          <span class="hits">12</span>
           
           <code class="ruby">        if timeout &gt; 0</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="125">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="125">
+          <span class="hits">12</span>
           
           <code class="ruby">          result = IO::select(@live_ioes, [], @live_ioes, timeout)</code>
         </li>
@@ -2304,20 +2304,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="130">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="130">
+          <span class="hits">12</span>
           
           <code class="ruby">        unless result.nil? #timeout</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="131">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="131">
+          <span class="hits">12</span>
           
           <code class="ruby">          readable, _writeable, errored = *result</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="132">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="132">
+          <span class="hits">12</span>
           
           <code class="ruby">          unless errored.empty?</code>
         </li>
@@ -2340,8 +2340,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="136">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="136">
+          <span class="hits">12</span>
           
           <code class="ruby">          consume_buffers(readable)</code>
         </li>
@@ -2370,8 +2370,8 @@
           <code class="ruby">      if @process_status.nil?</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="141">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="6" data-linenumber="141">
+          <span class="hits">6</span>
           
           <code class="ruby">        newpid, @process_status = Process.waitpid2(pid)</code>
         </li>
@@ -2430,14 +2430,14 @@
           <code class="ruby">    def consume_buffers(readable)</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="151">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="18" data-linenumber="151">
+          <span class="hits">18</span>
           
           <code class="ruby">      if not(readable.nil? or readable.empty?)</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="152">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="18" data-linenumber="152">
+          <span class="hits">18</span>
           
           <code class="ruby">        readable.each do |io|</code>
         </li>

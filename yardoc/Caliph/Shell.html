@@ -1,0 +1,1576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Caliph::Shell
+  
+    &mdash; caliph-0.1.2 Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Caliph/Shell.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Caliph.html" title="Caliph (module)">Caliph</a></span></span>
+     &raquo; 
+    <span class="title">Shell</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Caliph::Shell
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Caliph::Shell</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/caliph/shell.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Operates something like a command line shell, except from a Ruby object
+perspective.</p>
+
+<p>Basically, a Shell operates as your handle on creating, running and killing
+commands in Caliph.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#output_stream-instance_method" title="#output_stream (instance method)">- (Object) <strong>output_stream</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute output_stream.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#verbose-instance_method" title="#verbose (instance method)">- (Object) <strong>verbose</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute verbose.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Running Commands
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run-instance_method" title="#run (instance method)">- (CommandRunResult) <strong>run</strong>(*args) {|CommandLine| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Run the command, wait for termination, and collect the results.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run_as_replacement-instance_method" title="#run_as_replacement (instance method)">- (CommandRunResult) <strong>run_as_replacement</strong>(*args) {|CommandLine| ... }</a>
+    
+
+    
+      (also: #replace_us)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Completely replace the running process with a command.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run_detached-instance_method" title="#run_detached (instance method)">- (CommandRunResult) <strong>run_detached</strong>(*args) {|CommandLine| ... }</a>
+    
+
+    
+      (also: #spin_off)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Run the command in the background.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run_in_background-instance_method" title="#run_in_background (instance method)">- (CommandRunResult) <strong>run_in_background</strong>(*args) {|CommandLine| ... }</a>
+    
+
+    
+      (also: #background)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Run the command in parallel with the parent process - will kill it if it
+outlasts us.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#collect_result-instance_method" title="#collect_result (instance method)">- (Object) <strong>collect_result</strong>(command, pid, host_stdout, host_stderr) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Given a process ID for a running command and a pair of stdout/stdin
+streams, records the results of the command and returns them in a
+CommandRunResult instance.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#execute-instance_method" title="#execute (instance method)">- (Object) <strong>execute</strong>(command_line) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Run the command, wait for termination, and collect the results.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#kill_process-instance_method" title="#kill_process (instance method)">- (Object) <strong>kill_process</strong>(pid) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Kill processes given a raw pid.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#report-instance_method" title="#report (instance method)">- (Object) <strong>report</strong>(message, newline = true) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Prints information to output_stream which defaults to $stderr.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#report_verbose-instance_method" title="#report_verbose (instance method)">- (Object) <strong>report_verbose</strong>(message) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reports messages if verbose is true.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#spawn_process-instance_method" title="#spawn_process (instance method)">- (pid, ...) <strong>spawn_process</strong>(command_line) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a process to run a command.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="output_stream=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="output_stream-instance_method">
+  
+    - (<tt>Object</tt>) <strong>output_stream</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute output_stream</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_output_stream'>output_stream</span>
+  <span class='ivar'>@output_stream</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="verbose=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="verbose-instance_method">
+  
+    - (<tt>Object</tt>) <strong>verbose</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute verbose</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_verbose'>verbose</span>
+  <span class='ivar'>@verbose</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="collect_result-instance_method">
+  
+    - (<tt>Object</tt>) <strong>collect_result</strong>(command, pid, host_stdout, host_stderr) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Given a process ID for a running command and a pair of stdout/stdin
+streams, records the results of the command and returns them in a
+CommandRunResult instance.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_collect_result'>collect_result</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='comma'>,</span> <span class='id identifier rubyid_pid'>pid</span><span class='comma'>,</span> <span class='id identifier rubyid_host_stdout'>host_stdout</span><span class='comma'>,</span> <span class='id identifier rubyid_host_stderr'>host_stderr</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>CommandRunResult</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='comma'>,</span> <span class='id identifier rubyid_command'>command</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_streams'>streams</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='int'>1</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_host_stdout'>host_stdout</span><span class='comma'>,</span> <span class='int'>2</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_host_stderr'>host_stderr</span><span class='rbrace'>}</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="execute-instance_method">
+  
+    - (<tt>Object</tt>) <strong>execute</strong>(command_line) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Run the command, wait for termination, and collect the results. Returns an
+instance of CommandRunResult that contains the output and exit code of the
+command.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88
+89
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 88</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_collect_result'>collect_result</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_spawn_process'>spawn_process</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_wait'>wait</span>
+  <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="kill_process-instance_method">
+  
+    - (<tt>Object</tt>) <strong>kill_process</strong>(pid) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Kill processes given a raw pid. In general, prefer <span class='object_link'><a href="CommandRunResult.html#kill-instance_method" title="Caliph::CommandRunResult#kill (method)">CommandRunResult#kill</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>pid</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the process id to kill</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_kill_process'>kill_process</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span>
+  <span class='const'>Process</span><span class='period'>.</span><span class='id identifier rubyid_kill'>kill</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>INT</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>Errno</span><span class='op'>::</span><span class='const'>ESRCH</span>
+  <span class='id identifier rubyid_warn'>warn</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Couldn&#39;t find process </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pid'>pid</span><span class='embexpr_end'>}</span><span class='tstring_content'> to kill it</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="report-instance_method">
+  
+    - (<tt>Object</tt>) <strong>report</strong>(message, newline = true) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Prints information to output_stream which defaults to $stderr.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_report'>report</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='comma'>,</span> <span class='id identifier rubyid_newline'>newline</span><span class='op'>=</span><span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_output_stream'>output_stream</span><span class='period'>.</span><span class='id identifier rubyid_print'>print</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_newline'>newline</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="report_verbose-instance_method">
+  
+    - (<tt>Object</tt>) <strong>report_verbose</strong>(message) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reports messages if verbose is true. Used internally to print messages
+about running commands</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_report_verbose'>report_verbose</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_report'>report</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_verbose'>verbose</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run</strong>(&amp;block) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run</strong>(cmd, &amp;block) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run</strong>(*cmd_strings, &amp;block) </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Run the command, wait for termination, and collect the results. Returns an
+instance of CommandRunResult that contains the output and exit code of the
+command. This version <span class='object_link'><a href="#report-instance_method" title="Caliph::Shell#report (method)">#report</a></span>s some information to document that the
+command is running.  For a terser version, call <span class='object_link'><a href="#execute-instance_method" title="Caliph::Shell#execute (method)">#execute</a></span> directly</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run</strong>(cmd, &amp;block) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>execute</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run</strong>(*cmd_strings, &amp;block) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>set of strings to parse into a <span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>command about to be run (for configuration)</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>used to refer to and inspect the resulting process</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 109</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_command_line'>command_line</span> <span class='op'>=</span> <span class='id identifier rubyid_normalize_command_line'>normalize_command_line</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_report'>report</span> <span class='id identifier rubyid_command_line'>command_line</span><span class='period'>.</span><span class='id identifier rubyid_string_format'>string_format</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>false</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_execute'>execute</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_report'>report</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>=&gt; </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_exit_code'>exit_code</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_report_verbose'>report_verbose</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_format_streams'>format_streams</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_result'>result</span>
+<span class='kw'>ensure</span>
+  <span class='id identifier rubyid_report_verbose'>report_verbose</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run_as_replacement-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_as_replacement</strong>(&amp;block) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_as_replacement</strong>(cmd, &amp;block) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_as_replacement</strong>(*cmd_strings, &amp;block) </span>
+    
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='replace_us-instance_method'>replace_us</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Completely replace the running process with a command. Good for setting up
+a command and then running it, without worrying about what happens after
+that. Uses `exec` under the hood.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Using replace_us</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='comment'># The last thing we&#39;ll ever do:
+</span><span class='id identifier rubyid_shell'>shell</span><span class='period'>.</span><span class='id identifier rubyid_run_as_replacement'>run_as_replacement</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>echo</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Everything is okay</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'># don&#39;t worry, we never get here.
+</span><span class='id identifier rubyid_shell'>shell</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sudo</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>shutdown -h now</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_as_replacement</strong>(cmd, &amp;block) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>execute</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_as_replacement</strong>(*cmd_strings, &amp;block) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>set of strings to parse into a <span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>command about to be run (for configuration)</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>used to refer to and inspect the resulting process</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+130
+131
+132
+133
+134
+135
+136</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 130</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_run_as_replacement'>run_as_replacement</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_command_line'>command_line</span> <span class='op'>=</span> <span class='id identifier rubyid_normalize_command_line'>normalize_command_line</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_report'>report</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ceding execution to: </span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_report'>report</span> <span class='id identifier rubyid_command_line'>command_line</span><span class='period'>.</span><span class='id identifier rubyid_string_format'>string_format</span>
+  <span class='const'>Process</span><span class='period'>.</span><span class='id identifier rubyid_exec'>exec</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='period'>.</span><span class='id identifier rubyid_command_environment'>command_environment</span><span class='comma'>,</span> <span class='id identifier rubyid_command_line'>command_line</span><span class='period'>.</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run_detached-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_detached</strong>(&amp;block) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_detached</strong>(cmd, &amp;block) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_detached</strong>(*cmd_strings, &amp;block) </span>
+    
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='spin_off-instance_method'>spin_off</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Run the command in the background.  The command can survive the caller.
+Works, for instance, to kick off some long running processes that we
+don&#39;t care about. Note that this isn&#39;t quite full daemonization -
+we don&#39;t close the streams of the other process, or scrub its
+environment or anything.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_detached</strong>(cmd, &amp;block) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>execute</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_detached</strong>(*cmd_strings, &amp;block) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>set of strings to parse into a <span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>command about to be run (for configuration)</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>used to refer to and inspect the resulting process</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+145
+146
+147
+148
+149
+150
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 145</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_run_detached'>run_detached</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_command_line'>command_line</span> <span class='op'>=</span> <span class='id identifier rubyid_normalize_command_line'>normalize_command_line</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_pid'>pid</span><span class='comma'>,</span> <span class='id identifier rubyid_out'>out</span><span class='comma'>,</span> <span class='id identifier rubyid_err'>err</span> <span class='op'>=</span> <span class='id identifier rubyid_spawn_process'>spawn_process</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='rparen'>)</span>
+  <span class='const'>Process</span><span class='period'>.</span><span class='id identifier rubyid_detach'>detach</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_collect_result'>collect_result</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='comma'>,</span> <span class='id identifier rubyid_pid'>pid</span><span class='comma'>,</span> <span class='id identifier rubyid_out'>out</span><span class='comma'>,</span> <span class='id identifier rubyid_err'>err</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run_in_background-instance_method">
+  
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_in_background</strong>(&amp;block) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_in_background</strong>(cmd, &amp;block) </span>
+    
+      <span class="overload">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_in_background</strong>(*cmd_strings, &amp;block) </span>
+    
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='background-instance_method'>background</span></span>
+    </span>
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Run the command in parallel with the parent process - will kill it if it
+outlasts us. Good for running e.g. a web server that we need to interact
+with, or the like, without cluttering the system with a bunch of zombies.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_in_background</strong>(cmd, &amp;block) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>execute</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">- (<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>) <strong>run_in_background</strong>(*cmd_strings, &amp;block) </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>a</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>set of strings to parse into a <span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandLine.html" title="Caliph::CommandLine (class)">CommandLine</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>command about to be run (for configuration)</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="CommandRunResult.html" title="Caliph::CommandRunResult (class)">CommandRunResult</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>used to refer to and inspect the resulting process</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_run_in_background'>run_in_background</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_command_line'>command_line</span> <span class='op'>=</span> <span class='id identifier rubyid_normalize_command_line'>normalize_command_line</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_pid'>pid</span><span class='comma'>,</span> <span class='id identifier rubyid_out'>out</span><span class='comma'>,</span> <span class='id identifier rubyid_err'>err</span> <span class='op'>=</span> <span class='id identifier rubyid_spawn_process'>spawn_process</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='rparen'>)</span>
+  <span class='const'>Process</span><span class='period'>.</span><span class='id identifier rubyid_detach'>detach</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_at_exit'>at_exit</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_kill_process'>kill_process</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_collect_result'>collect_result</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='comma'>,</span> <span class='id identifier rubyid_pid'>pid</span><span class='comma'>,</span> <span class='id identifier rubyid_out'>out</span><span class='comma'>,</span> <span class='id identifier rubyid_err'>err</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="spawn_process-instance_method">
+  
+    - (<tt>pid</tt>, ...) <strong>spawn_process</strong>(command_line) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a process to run a command. Handles connecting pipes to stardard
+streams, launching the process and returning a pid for it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>pid</tt>, <tt>host_stdout</tt>, <tt>host_stderr</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the process id and streams associated with the child process</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/caliph/shell.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_spawn_process'>spawn_process</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_host_stdout'>host_stdout</span><span class='comma'>,</span> <span class='id identifier rubyid_cmd_stdout'>cmd_stdout</span> <span class='op'>=</span> <span class='const'>IO</span><span class='period'>.</span><span class='id identifier rubyid_pipe'>pipe</span>
+  <span class='id identifier rubyid_host_stderr'>host_stderr</span><span class='comma'>,</span> <span class='id identifier rubyid_cmd_stderr'>cmd_stderr</span> <span class='op'>=</span> <span class='const'>IO</span><span class='period'>.</span><span class='id identifier rubyid_pipe'>pipe</span>
+
+  <span class='id identifier rubyid_pid'>pid</span> <span class='op'>=</span> <span class='const'>Process</span><span class='period'>.</span><span class='id identifier rubyid_spawn'>spawn</span><span class='lparen'>(</span><span class='id identifier rubyid_command_line'>command_line</span><span class='period'>.</span><span class='id identifier rubyid_command_environment'>command_environment</span><span class='comma'>,</span> <span class='id identifier rubyid_command_line'>command_line</span><span class='period'>.</span><span class='id identifier rubyid_command'>command</span><span class='comma'>,</span> <span class='symbol'>:out</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_cmd_stdout'>cmd_stdout</span><span class='comma'>,</span> <span class='symbol'>:err</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_cmd_stderr'>cmd_stderr</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_cmd_stdout'>cmd_stdout</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
+  <span class='id identifier rubyid_cmd_stderr'>cmd_stderr</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span>
+
+  <span class='kw'>return</span> <span class='id identifier rubyid_pid'>pid</span><span class='comma'>,</span> <span class='id identifier rubyid_host_stdout'>host_stdout</span><span class='comma'>,</span> <span class='id identifier rubyid_host_stderr'>host_stderr</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Jul 15 01:04:38 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; caliph-0.1.2 Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.README.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'>
+<h1 id="label-Caliph">Caliph</h1>
+
+<p>Caliph - a Ruby tool for generating and executing command-line commands.</p>
+
+<p>Does your Ruby script or app need to generate commands to run at the CLI,
+to run with system() or similar? Want to generate them in a clean, testable
+Ruby api? How about automatically capturing output, exit code, and other
+goodies?</p>
+
+<p>Because doing the system programming to accomplish all this is really kind
+of a pain, we&#39;ve bundled all of these into a single gem.</p>
+
+<p><a href="https://codeclimate.com/github/LRDesign/Caliph"><img
+src="https://codeclimate.com/github/LRDesign/Caliph.png"></a> <a
+href="https://travis-ci.org/LRDesign/Caliph"><img
+src="https://travis-ci.org/LRDesign/Caliph.svg?branch=master"></a> <a
+href="https://gemnasium.com/LRDesign/Caliph"><img
+src="https://gemnasium.com/LRDesign/Caliph.svg"></a></p>
+
+<h2 id="label-Usage+Examples">Usage Examples</h2>
+
+<pre class="code ruby"><code class="ruby"># An elaborate way to print a file listing:
+
+shell = Caliph.new
+long_listing = shell.run(&quot;ls&quot;, &quot;-la&quot;)
+if long_listing.succeeded?)
+  puts long_listing.stdout
+end
+</code></pre>
+
+<p>As ever, it&#39;s a contrived example, but you can see that you use
+<span class='object_link'><a href="Caliph.html#new-class_method" title="Caliph.new (method)">Caliph.new</a></span> to create a shell, and then call <span class='object_link'><a href="Caliph/Shell.html#run-instance_method" title="Caliph::Shell#run (method)">Caliph::Shell#run</a></span> (or
+it&#39;s cousins) to build and execute commands, and then use methods on
+<span class='object_link'><a href="Caliph/CommandRunResult.html" title="Caliph::CommandRunResult (class)">Caliph::CommandRunResult</a></span> to examine their status and results. Pretty
+simple.</p>
+
+<h3 id="label-Create+a+command">Create a command</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># &#39;ls -la&#39;
+</span><span class='const'>Caliph</span><span class='op'>::</span><span class='const'>CommandLine</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ls</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-la</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># &#39;ls -la&#39;, another way
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>Caliph</span><span class='op'>::</span><span class='const'>CommandLine</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ls</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_options'>options</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-la</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='comment'># Of course, there&#39;s a DSL
+</span><span class='id identifier rubyid_include'>include</span> <span class='const'>Caliph</span><span class='op'>::</span><span class='const'>CommandLineDSL</span>
+
+<span class='comment'># synonymous with Caliph::CommandLine.new(&#39;cat&#39;, &#39;/etc/passwd&#39;)
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cat</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/etc/passwd</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+
+<h3 id="label-Add+environment+variables">Add environment variables</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># RAILS_ENV=production rake db:migrate
+</span><span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rake</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>db:migrate</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RAILS_ENV</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>production</span></span></code></pre>
+
+<h3 id="label-Run+any+of+the+above+by+giving+them+to+a+shell">Run any of the above by giving them to a shell</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_shell'>shell</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+
+<span class='comment'># Shell yields commands for configuration prior to running
+</span>
+<span class='id identifier rubyid_shell'>shell</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rake</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>db:migrate</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_migrate'>migrate</span><span class='op'>|</span>
+  <span class='id identifier rubyid_migrate'>migrate</span><span class='period'>.</span><span class='id identifier rubyid_env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>RAILS_ENV</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>production</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_migrate'>migrate</span><span class='period'>.</span><span class='id identifier rubyid_redirect_stdout'>redirect_stdout</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/tmp/prod.log</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h3 id="label-See+commands+as+they%27d+be+run">See commands as they&#39;d be run</h3>
+
+<p><span class='object_link'><a href="Caliph/CommandLine.html#string_format-instance_method" title="Caliph::CommandLine#string_format (method)">Caliph::CommandLine#string_format</a></span> or <code>#to_s</code> returns the
+entire command. <span class='object_link'><a href="Caliph/CommandLine.html#command-instance_method" title="Caliph::CommandLine#command (method)">Caliph::CommandLine#command</a></span> returns just the command
+portion without prepended environment variables, which might be handy if
+you&#39;re passing the command to ssh or sudo and need to handle ENV
+differently.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>java</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>my_file.jar</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>JAVA_HOME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>~/java_files</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_string_format'>string_format</span> <span class='comment'># =&gt; &quot;JAVA_HOME=&#39;~/java_files&#39; java my_file.jar&quot;
+</span>
+<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_command'>command</span> <span class='comment'># =&gt; &quot;java my_file.jar&quot;
+</span></code></pre>
+
+<h3 id="label-Chaining+commands">Chaining commands</h3>
+
+<p><span class='object_link'><a href="Caliph/CommandChain.html" title="Caliph::CommandChain (class)">Caliph::CommandChain</a></span> and related classes implement chained commands. If
+you&#39;ve mixed in <span class='object_link'><a href="Caliph/CommandLineDSL.html" title="Caliph::CommandLineDSL (module)">Caliph::CommandLineDSL</a></span>, you can use operators &amp;,
+|, and - for conditional, pipe, and path-chaining, respectively.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Pipe Chain
+</span><span class='comment'># find . -name &#39;*.sw.&#39; | xargs rm
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>find</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-name &#39;*.sw.&#39;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>|</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xargs</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rm</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+
+<span class='comment'># &amp;&amp; - style conditional chain
+</span><span class='comment'># cd /tmp/trash &amp;&amp; rm -rf *
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>cd</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/tmp/trash</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>&amp;</span> <span class='qwords_beg'>%w{</span><span class='tstring_content'>rm</span><span class='words_sep'> </span><span class='tstring_content'>-rf</span><span class='words_sep'> </span><span class='tstring_content'>*</span><span class='words_sep'>}</span>
+
+<span class='comment'># Double-hyphen separated commands
+</span><span class='comment'># sudo -- gem install bundler
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sudo</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>-</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gem</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>install</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bundler</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span></code></pre>
+
+<h3 id="label-Redirecting+Output">Redirecting Output</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># redirect STDOUT
+</span><span class='comment'># echo &quot;foo&quot; 1&gt;some_file.txt
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>echo</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_redirect_stdout'>redirect_stdout</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>some_file.txt</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># redirect STDERR
+</span><span class='comment'># echo &quot;foo&quot; 2&gt;error_file.txt
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>echo</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_redirect_stderr'>redirect_stderr</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>error_file.txt</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># chain redirects
+</span><span class='comment'># curl http://LRDesign.com 1&gt;page.html 2&gt;progress.txt
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>curl</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>http://LRDesign.com</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_redirect_stdout'>redirect_stdout</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>page.html</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_redirect_stderr'>redirect_stderr</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>progress.txt</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># redirect STDOUT and STDERR to the same destination with one command
+</span><span class='comment'># rm -rf 1&gt;/dev/null 2&gt;/dev/null
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rm</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-rf</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_redirect_both'>redirect_both</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/dev/null</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+
+<h3 id="label-Execute+commands+and+capture+the+output">Execute commands and capture the output</h3>
+
+<p>Several instance methods on CommandLine and CommandChain are provided
+for executing commands.</p>
+<ul><li>
+<p><code>run</code> Run the command and wait for the result. Returns a
+<code>CommandRunResult</code> instance.</p>
+</li><li>
+<p><code>execute</code> Same as <code>run</code>, but terser, with no
+additional output added to STDOUT.</p>
+</li><li>
+<p><code>run_as_replacement</code> Run the command in a new process and kill
+this process.</p>
+</li><li>
+<p><code>run_detached</code> Run the command as a new background process. It
+can continue even if the caller terminates.</p>
+</li><li>
+<p><code>run_in_background</code> Run the command as a background process, but
+kill it if the caller terminates</p>
+</li></ul>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># find all vim swap files and wait for result
+</span><span class='id identifier rubyid_results'>results</span> <span class='op'>=</span> <span class='id identifier rubyid_shell'>shell</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>find</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-name *.sw.&#39;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+<span class='comment'># delete all vim swap files in a parallel process
+</span><span class='id identifier rubyid_find_swaps'>find_swaps</span> <span class='op'>=</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>find</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>.</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-name &#39;*.sw.&#39;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>|</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>xargs</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rm</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_shell'>shell</span><span class='period'>.</span><span class='id identifier rubyid_run_in_background'>run_in_background</span><span class='lparen'>(</span><span class='id identifier rubyid_find_swaps'>find_swaps</span><span class='rparen'>)</span>
+
+<span class='comment'># launch a server, terminating this process.  Useful for wrapper scripts!
+</span><span class='id identifier rubyid_launcher'>launcher</span> <span class='op'>=</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>pg_ctl</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>start -l</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>logfile</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_shell'>shell</span><span class='period'>.</span><span class='id identifier rubyid_run_as_replacement'>run_as_replacement</span><span class='lparen'>(</span><span class='id identifier rubyid_launcher'>launcher</span><span class='rparen'>)</span></code></pre>
+
+<h3 id="label-Examine+the+results+of+a+command">Examine the results of a command</h3>
+
+<p><span class='object_link'><a href="Caliph/Shell.html#execute-instance_method" title="Caliph::Shell#execute (method)">Caliph::Shell#execute</a></span> returns a <span class='object_link'><a href="Caliph/CommandRunResult.html" title="Caliph::CommandRunResult (class)">Caliph::CommandRunResult</a></span> instance.
+CommandRunResult has the following useful instance methods:</p>
+<ul><li>
+<p><code>stdout</code> A String containing the contents of STDOUT.</p>
+</li><li>
+<p><code>stderr</code> A String containing the contents of STDERR.</p>
+</li><li>
+<p><code>exit_code</code> The exit code of the command</p>
+</li><li>
+<p><code>succeded?</code> True if <code>exit_code</code> is 0.</p>
+</li><li>
+<p><code>must_succeed!</code> Calls <code>fail</code> with an error message if
+the command did not exit successfully.</p>
+</li></ul>
+
+<h2 id="label-Testing+code+that+uses+Caliph">Testing code that uses Caliph</h2>
+
+<p>Caliph includes some useful classes for mocking out the command line
+environment for purposes of testing. See <span class='object_link'><a href="Caliph/MockCommandResult.html" title="Caliph::MockCommandResult (class)">Caliph::MockCommandResult</a></span> and
+<span class='object_link'><a href="Caliph/CommandLine.html" title="Caliph::CommandLine (class)">Caliph::CommandLine</a></span> in lib/caliph/testing for more info.</p>
+
+<p>Further documentation on testing coming soon!</p>
+
+<h2 id="label-Acknowledgements">Acknowledgements</h2>
+
+<p>The first version of these classes were originally written as part of
+Mattock by Judson Lester: <a
+href="https://github.com/nyarly/mattock">github.com/nyarly/mattock</a></p>
+
+<h2 id="label-Credits">Credits</h2>
+
+<p>Evan Dorn and Judson Lester of Logical Reality Design, Inc.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Tue Jul 15 01:04:36 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-2.0.0).
+</div>
+
+  </body>
+</html>
