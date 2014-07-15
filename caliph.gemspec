@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
     lib/caliph/testing/mock-command-line.rb
     lib/caliph/testing/record-commands.rb
     lib/caliph.rb
+    lib/caliph/shell.rb
     spec/command-chain.rb
     spec/command-line-dsl.rb
     spec/command-line.rb
