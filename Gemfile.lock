@@ -3,6 +3,21 @@ PATH
   specs:
     caliph (0.1.2)
 
+PATH
+  remote: ../corundum/
+  specs:
+    corundum (0.3.8)
+      bundler
+      compass (>= 0.12.1)
+      mailfactory (~> 1.4.0)
+      mattock (~> 0.7.1)
+      nokogiri
+      paint (~> 0.8.7)
+      rdoc
+      rspec (>= 2.0)
+      simplecov (>= 0.5.4)
+      yard
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -17,17 +32,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.2.19)
-    corundum (0.3.8)
-      bundler
-      compass (>= 0.12.1)
-      mailfactory (~> 1.4.0)
-      mattock (~> 0.7.1)
-      nokogiri
-      paint (~> 0.8.7)
-      rdoc
-      rspec (>= 2.0)
-      simplecov (>= 0.5.4)
-      yard
     diff-lcs (1.2.5)
     docile (1.1.5)
     fssm (0.2.10)
@@ -81,7 +85,7 @@ DEPENDENCIES
   cadre
   caliph!
   codeclimate-test-reporter
-  corundum
+  corundum!
   fuubar
   rake
   rspec
