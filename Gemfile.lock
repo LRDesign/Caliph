@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    caliph (0.1.1)
+    caliph (0.1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -17,7 +17,7 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.2.19)
-    corundum (0.3.7)
+    corundum (0.3.8)
       bundler
       compass (>= 0.12.1)
       mailfactory (~> 1.4.0)
@@ -29,7 +29,7 @@ GEM
       simplecov (>= 0.5.4)
       yard
     diff-lcs (1.2.5)
-    docile (1.1.4)
+    docile (1.1.5)
     fssm (0.2.10)
     fuubar (1.3.3)
       rspec (>= 2.14.0, < 3.1.0)
