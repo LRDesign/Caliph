@@ -1,0 +1,4636 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <title>Code coverage for Caliph</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src='./assets/0.8.0/application.js' type='text/javascript'></script>    
+    <link href='./assets/0.8.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/png" href="./assets/0.8.0/favicon_yellow.png" />
+    <link rel="icon" type="image/png" href="./assets/0.8.0/favicon.png" />
+  </head>
+  
+  <body>
+    <div id="loading">
+      <img src="./assets/0.8.0/loading.gif" alt="loading"/>
+    </div>
+    <div id="wrapper" style="display:none;">
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-07-15T00:58:02-07:00">2014-07-15T00:58:02-07:00</abbr></div>
+      <ul class="group_tabs"></ul>
+
+      <div id="content">
+        <div class="file_list_container" id="AllFiles">
+  <h2>
+    <span class="group_name">All Files</span>
+    (<span class="covered_percent"><span class="yellow">86.1%</span></span>
+     covered at
+     <span class="covered_strength">
+       <span class="green">
+         6.3
+       </span>
+    </span> hits/line)
+  </h2>
+  <a name="AllFiles"></a>
+  <div>
+    <b>10</b> files in total.
+    <b>331</b> relevant lines. 
+    <span class="green"><b>285</b> lines covered</span> and
+    <span class="red"><b>46</b> lines missed </span>
+  </div>
+  <table class="file_list">
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>% covered</th>
+        <th>Lines</th>
+        <th>Relevant Lines</th>
+        <th>Lines covered</th>
+        <th>Lines missed</th>
+        <th>Avg. Hits / Line</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="strong"><a href="#fab82a79026959593537f784028a1570b23ecae9" class="src_link" title="lib/caliph.rb">lib/caliph.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>13</td>
+        <td>8</td>
+        <td>8</td>
+        <td>0</td>
+        <td>2.1</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#fc386d21c638bd0cedd5b676435d5e4336221f49" class="src_link" title="lib/caliph/command-chain.rb">lib/caliph/command-chain.rb</a></td>
+        <td class="green strong">96.88 %</td>
+        <td>61</td>
+        <td>32</td>
+        <td>31</td>
+        <td>1</td>
+        <td>4.2</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#5214dd046e59cef93a75ef9102802dcbf8bb90c7" class="src_link" title="lib/caliph/command-line-dsl.rb">lib/caliph/command-line-dsl.rb</a></td>
+        <td class="yellow strong">83.33 %</td>
+        <td>11</td>
+        <td>6</td>
+        <td>5</td>
+        <td>1</td>
+        <td>1.2</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#6ef8a65b92ae8d605be772ccf24c05dde392d3a2" class="src_link" title="lib/caliph/command-line.rb">lib/caliph/command-line.rb</a></td>
+        <td class="yellow strong">89.36 %</td>
+        <td>128</td>
+        <td>47</td>
+        <td>42</td>
+        <td>5</td>
+        <td>10.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#f6db313dcf9abfae296b6a53ab940b4f42cbc959" class="src_link" title="lib/caliph/command-run-result.rb">lib/caliph/command-run-result.rb</a></td>
+        <td class="yellow strong">87.65 %</td>
+        <td>170</td>
+        <td>81</td>
+        <td>71</td>
+        <td>10</td>
+        <td>9.7</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#7fb4890ebebb27b80dfb4d7266990aba77a363b9" class="src_link" title="lib/caliph/define-op.rb">lib/caliph/define-op.rb</a></td>
+        <td class="green strong">94.12 %</td>
+        <td>29</td>
+        <td>17</td>
+        <td>16</td>
+        <td>1</td>
+        <td>2.1</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#496451b376db01b6e14dd6534b93a97e4d4efb93" class="src_link" title="lib/caliph/shell-escaped.rb">lib/caliph/shell-escaped.rb</a></td>
+        <td class="red strong">61.54 %</td>
+        <td>25</td>
+        <td>13</td>
+        <td>8</td>
+        <td>5</td>
+        <td>0.6</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#42e9dcb0c4977b40031f265dd54d14d55f9cd0c9" class="src_link" title="lib/caliph/shell.rb">lib/caliph/shell.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>172</td>
+        <td>71</td>
+        <td>71</td>
+        <td>0</td>
+        <td>8.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#6887dfd7da6ca23243759a70a69f020fa7212aee" class="src_link" title="lib/caliph/testing/mock-command-line.rb">lib/caliph/testing/mock-command-line.rb</a></td>
+        <td class="red strong">47.06 %</td>
+        <td>67</td>
+        <td>34</td>
+        <td>16</td>
+        <td>18</td>
+        <td>0.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#159b398befedf62dbc64add319edcc94fbdd6c25" class="src_link" title="lib/caliph/testing/record-commands.rb">lib/caliph/testing/record-commands.rb</a></td>
+        <td class="red strong">77.27 %</td>
+        <td>38</td>
+        <td>22</td>
+        <td>17</td>
+        <td>5</td>
+        <td>0.8</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+
+        
+      </div>
+    
+      <div id="footer">
+        Generated by <a href="http://github.com/colszowka/simplecov">simplecov</a> v0.8.2 
+        and simplecov-html v0.8.0<br/>
+        using RSpec
+      </div>
+    
+      <div class="source_files">
+      
+        <div class="source_table" id="fab82a79026959593537f784028a1570b23ecae9">
+  <div class="header">
+    <h3>lib/caliph.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">  # Returns an instance of the default {Shell}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  # @todo add alternative shells - e.g. SSHShell</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.new</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="5">
+          <span class="hits">10</span>
+          
+          <code class="ruby">    Shell.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/command-line&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/command-chain&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/command-line-dsl&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/shell-escaped&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/shell&#39;</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="fc386d21c638bd0cedd5b676435d5e4336221f49">
+  <div class="header">
+    <h3>lib/caliph/command-chain.rb</h3>
+    <h4><span class="green">96.88 %</span> covered</h4>
+    <div>
+      <b>32</b> relevant lines. 
+      <span class="green"><b>31</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/define-op&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class CommandChain &lt; CommandLine</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    include DefineOp</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="8">
+          <span class="hits">8</span>
+          
+          <code class="ruby">      @commands = []</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="9">
+          <span class="hits">8</span>
+          
+          <code class="ruby">      @command_environment = {}</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="10">
+          <span class="hits">8</span>
+          
+          <code class="ruby">      super(nil)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader :commands</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def valid?</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="16">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      commands.all?{|cmd| cmd.valid?}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def add(cmd)</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="20">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      yield cmd if block_given?</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="21">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      @commands &lt;&lt; cmd</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="22">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      self</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">    #Honestly this is sub-optimal - biggest driver for considering the</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">    #mini-shell approach here.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def command_environment</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="28">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @command_environment = @commands.reverse.inject(@command_environment) do |env, command|</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="29">
+          <span class="hits">10</span>
+          
+          <code class="ruby">        env.merge(command.command_environment)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def name</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="34">
+          
+          
+          <code class="ruby">      @name || @commands.last.name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class WrappingChain &lt; CommandChain</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    define_op(&#39;-&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def command</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="42">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      @commands.map{|cmd| cmd.command}.join(&quot; -- &quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class PrereqChain &lt; CommandChain</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    define_op(&#39;&amp;&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def command</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="50">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      @commands.map{|cmd| cmd.command}.join(&quot; &amp;&amp; &quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class PipelineChain &lt; CommandChain</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    define_op(&#39;|&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def command</code>
+        </li>
+      
+        <li class="covered" data-hits="21" data-linenumber="58">
+          <span class="hits">21</span>
+          
+          <code class="ruby">      @commands.map{|cmd| cmd.command}.join(&quot; | &quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="5214dd046e59cef93a75ef9102802dcbf8bb90c7">
+  <div class="header">
+    <h3>lib/caliph/command-line-dsl.rb</h3>
+    <h4><span class="yellow">83.33 %</span> covered</h4>
+    <div>
+      <b>6</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  module CommandLineDSL</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def cmd(*args, &amp;block)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      CommandLine.new(*args, &amp;block)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def escaped_command(*args, &amp;block)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
+          
+          <code class="ruby">      ShellEscaped.new(CommandLine.new(*args, &amp;block))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="6ef8a65b92ae8d605be772ccf24c05dde392d3a2">
+  <div class="header">
+    <h3>lib/caliph/command-line.rb</h3>
+    <h4><span class="yellow">89.36 %</span> covered</h4>
+    <div>
+      <b>47</b> relevant lines. 
+      <span class="green"><b>42</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/define-op&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/command-run-result&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class CommandLine</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    include DefineOp</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    class &lt;&lt; self</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      attr_accessor :output_stream</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(executable = nil, *options)</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="13">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      @output_stream = self.class.output_stream || $stderr</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="14">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      @executable = executable.to_s unless executable.nil?</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="15">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      @options = options</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="16">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      @redirections = []</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="17">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      @env = {}</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="18">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      @verbose = false</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="19">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      yield self if block_given?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_accessor :name, :executable, :options, :env, :output_stream, :verbose</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader :redirections</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    alias_method :command_environment, :env</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def valid?</code>
+        </li>
+      
+        <li class="covered" data-hits="18" data-linenumber="28">
+          <span class="hits">18</span>
+          
+          <code class="ruby">      !@executable.nil?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def set_env(name, value)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
+          
+          <code class="ruby">      command_environment[name] = value</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
+          
+          <code class="ruby">      return self</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def name</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @name || executable</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">    # The command as a string, including arguments and options</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def command</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="42">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      ([executable] + options_composition + @redirections).join(&quot; &quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">    # The command as a string, including arguments and options, plus prefixed</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">    # environment variables.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def string_format</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">      (command_environment.map do |key, value|</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="49">
+          <span class="hits">5</span>
+          
+          <code class="ruby">        [key, value].join(&quot;=&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="50">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      end + [command]).join(&quot; &quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def options_composition</code>
+        </li>
+      
+        <li class="covered" data-hits="43" data-linenumber="54">
+          <span class="hits">43</span>
+          
+          <code class="ruby">      options</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def redirect_to(stream, path)</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="58">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      @redirections &lt;&lt; &quot;#{stream}&gt;#{path}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="59">
+          <span class="hits">6</span>
+          
+          <code class="ruby">      self</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">    # Waits for the process to complete. If this takes longer that</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">    # {consume_timeout},</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def redirect_from(path, stream)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="65">
+          
+          
+          <code class="ruby">      @redirections &lt;&lt; &quot;#{stream}&lt;#{path}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def copy_stream_to(from, to)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="69">
+          
+          
+          <code class="ruby">      @redirections &lt;&lt; &quot;#{from}&gt;&amp;#{to}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def redirect_stdout(path)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="73">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      redirect_to(1, path)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="76">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def redirect_stderr(path)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="77">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      redirect_to(2, path)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def redirect_stdin(path)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="81">
+          
+          
+          <code class="ruby">      redirect_from(path, 0)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="84">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def redirect_both(path)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      redirect_stdout(path).redirect_stderr(path)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby">    #:nocov:</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="89">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    #@deprecated (see: Shell)</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="90">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    def run</code>
+        </li>
+      
+        <li class="skipped" data-hits="9" data-linenumber="91">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">      Caliph.new.run(self)</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="92">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="93">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="94">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    #@deprecated (see: Shell)</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="95">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    def run_as_replacement</code>
+        </li>
+      
+        <li class="skipped" data-hits="0" data-linenumber="96">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">      Caliph.new.run_as_replacement(self)</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="97">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="98">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    alias replace_us run_as_replacement</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="99">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="100">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    #@deprecated (see: Shell)</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="101">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    def run_detached</code>
+        </li>
+      
+        <li class="skipped" data-hits="0" data-linenumber="102">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">      Caliph.new.run_detached(self)</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="103">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="104">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    alias spin_off run_detached</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="105">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="106">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    #@deprecated (see: Shell)</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="107">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    def execute</code>
+        </li>
+      
+        <li class="skipped" data-hits="0" data-linenumber="108">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">      Caliph.new.execute(self)</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="109">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="110">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="111">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    #@deprecated (see: Shell)</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="112">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    def run_in_background</code>
+        </li>
+      
+        <li class="skipped" data-hits="0" data-linenumber="113">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">      Caliph.new.run_in_background(self)</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="114">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="115">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    alias background run_in_background</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="116">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="117">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    #@deprecated</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="118">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    def succeeds?</code>
+        </li>
+      
+        <li class="skipped" data-hits="2" data-linenumber="119">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">      run.succeeded?</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="120">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="121">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="122">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    #@deprecated</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="123">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    def must_succeed!</code>
+        </li>
+      
+        <li class="skipped" data-hits="1" data-linenumber="124">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">      run.must_succeed!</code>
+        </li>
+      
+        <li class="skipped" data-hits="" data-linenumber="125">
+          
+          <span class="hits">skipped</span>
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="126">
+          
+          
+          <code class="ruby">    #:nocov:</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="128">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="f6db313dcf9abfae296b6a53ab940b4f42cbc959">
+  <div class="header">
+    <h3>lib/caliph/command-run-result.rb</h3>
+    <h4><span class="yellow">87.65 %</span> covered</h4>
+    <div>
+      <b>81</b> relevant lines. 
+      <span class="green"><b>71</b> lines covered</span> and
+      <span class="red"><b>10</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">  # This is the Caliph handle on a run process - it can be used to send signals</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  # to running processes, wait for them to complete, get their exit status once</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">  # they have, and watch their streams in either case.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class CommandRunResult</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(pid, command, shell)</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="7">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      @command = command</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="8">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      @pid = pid</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="9">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      @shell = shell</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">      #####</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="12">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      @process_status = nil</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="13">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      @streams = {}</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="14">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      @consume_timeout = nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader :process_status</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader :pid, :command</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_accessor :consume_timeout, :streams</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">    # Access the stdout of the process</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def stdout</code>
+        </li>
+      
+        <li class="covered" data-hits="37" data-linenumber="24">
+          <span class="hits">37</span>
+          
+          <code class="ruby">      @streams[1]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    # Access the stderr of the process</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def stderr</code>
+        </li>
+      
+        <li class="covered" data-hits="26" data-linenumber="29">
+          <span class="hits">26</span>
+          
+          <code class="ruby">      @streams[2]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">    # @return [exit_code] the raw exit of the process</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">    # @return [nil] the process is still running</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def exit_code</code>
+        </li>
+      
+        <li class="covered" data-hits="23" data-linenumber="35">
+          <span class="hits">23</span>
+          
+          <code class="ruby">      if @process_status.nil?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">        return nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="23" data-linenumber="38">
+          <span class="hits">23</span>
+          
+          <code class="ruby">        @process_status.exitstatus</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    alias exit_status exit_code</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">    # Check whether the process is still running</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">    # @return [true] the process is still running</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">    # @return [false] the process has completed</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def running?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="47">
+          
+          
+          <code class="ruby">      !@process_status.nil?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby">    # Confirm that the process exited with a successful exit code (i.e. 0).</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">    # This is pretty reliable, but many applications return bad exit statuses -</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">    # 0 when they failed, usually.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def succeeded?</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="54">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      must_succeed!</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="55">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      return true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">    rescue</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      return false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">    # Nicely formatted output of stdout and stderr - won&#39;t be intermixed, which</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">    # may be different than what you&#39;d see live in the shell</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="62">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def format_streams</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">      &quot;stdout:#{stdout.nil? || stdout.empty? ? &quot;[empty]\n&quot; : &quot;\n#{stdout}&quot;}&quot; +</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="64">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      &quot;stderr:#{stderr.nil? || stderr.empty? ? &quot;[empty]\n&quot; : &quot;\n#{stderr}&quot;}---&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">    # Demands that the process succeed, or else raises and error</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def must_succeed!</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="69">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      case exit_code</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">      when 0</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="71">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        return exit_code</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        fail &quot;Command #{@command.inspect} failed with exit status #{exit_code}: \n#{format_streams}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">    # Stop a running process. Sends SIGINT by default which about like hitting</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">    # Control-C.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby">    # @param signal the Unix signal to send to the process</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def kill(signal = nil)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="81">
+          
+          
+          <code class="ruby">      Process.kill(signal || &quot;INT&quot;, pid)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby">    rescue Errno::ESRCH</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="83">
+          
+          
+          <code class="ruby">      warn &quot;Couldn&#39;t find process #{pid} to kill it&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby">    # Waits for the process to complete. If this takes longer that</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">    # {consume_timeout}, output on the process&#39;s streams will be output via</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby">    # {Shell#report} - very useful when compilation or network transfers are</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
+          <code class="ruby">    # taking a long time.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def wait</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="91">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      @accumulators = {}</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="92">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      waits = {}</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="93">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      @buffered_echo = []</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="95">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      ioes = streams.values</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="96">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      ioes.each do |io|</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="97">
+          <span class="hits">24</span>
+          
+          <code class="ruby">        @accumulators[io] = []</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="98">
+          <span class="hits">24</span>
+          
+          <code class="ruby">        waits[io] = 3</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="100">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      begin_echoing = Time.now + (@consume_timeout || 3)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="102">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      @live_ioes = ioes.dup</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="103">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="104">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      until @live_ioes.empty? do</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="105">
+          <span class="hits">16</span>
+          
+          <code class="ruby">        newpid, @process_status = Process.waitpid2(pid, Process::WNOHANG)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="106">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="107">
+          <span class="hits">16</span>
+          
+          <code class="ruby">        unless @process_status.nil?</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="108">
+          <span class="hits">5</span>
+          
+          <code class="ruby">          consume_buffers(@live_ioes)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="109">
+          <span class="hits">5</span>
+          
+          <code class="ruby">          break</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="110">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="112">
+          <span class="hits">11</span>
+          
+          <code class="ruby">        timeout = 0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="114">
+          <span class="hits">11</span>
+          
+          <code class="ruby">        if !@buffered_echo.nil?</code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="115">
+          <span class="hits">11</span>
+          
+          <code class="ruby">          timeout = begin_echoing - Time.now</code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="116">
+          <span class="hits">11</span>
+          
+          <code class="ruby">          if timeout &lt; 0</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="117">
+          
+          
+          <code class="ruby">            @shell.report &quot;&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="118">
+          
+          
+          <code class="ruby">            @shell.report &quot;Long running command output:&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="119">
+          
+          
+          <code class="ruby">            @shell.report @buffered_echo.join</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="120">
+          
+          
+          <code class="ruby">            @buffered_echo = nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="121">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="122">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="124">
+          <span class="hits">11</span>
+          
+          <code class="ruby">        if timeout &gt; 0</code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="125">
+          <span class="hits">11</span>
+          
+          <code class="ruby">          result = IO::select(@live_ioes, [], @live_ioes, timeout)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="126">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="127">
+          
+          
+          <code class="ruby">          result = IO::select(@live_ioes, [], @live_ioes, 1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="128">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="130">
+          <span class="hits">11</span>
+          
+          <code class="ruby">        unless result.nil? #timeout</code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="131">
+          <span class="hits">11</span>
+          
+          <code class="ruby">          readable, _writeable, errored = *result</code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="132">
+          <span class="hits">11</span>
+          
+          <code class="ruby">          unless errored.empty?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="133">
+          
+          
+          <code class="ruby">            raise &quot;Error on IO: #{errored.inspect}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="134">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="135">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="136">
+          <span class="hits">11</span>
+          
+          <code class="ruby">          consume_buffers(readable)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="137">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="138">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="139">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="140">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      if @process_status.nil?</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="141">
+          <span class="hits">7</span>
+          
+          <code class="ruby">        newpid, @process_status = Process.waitpid2(pid)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="143">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="144">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      ioes.each do |io|</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="145">
+          <span class="hits">24</span>
+          
+          <code class="ruby">        io.close</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="146">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="36" data-linenumber="147">
+          <span class="hits">36</span>
+          
+          <code class="ruby">      @streams = Hash[ioes.each_with_index.map{|io, index| [index + 1, @accumulators[io].join]}]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="148">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="149">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="150">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def consume_buffers(readable)</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="151">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      if not(readable.nil? or readable.empty?)</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="152">
+          <span class="hits">16</span>
+          
+          <code class="ruby">        readable.each do |io|</code>
+        </li>
+      
+        <li class="covered" data-hits="23" data-linenumber="153">
+          <span class="hits">23</span>
+          
+          <code class="ruby">          begin</code>
+        </li>
+      
+        <li class="covered" data-hits="23" data-linenumber="154">
+          <span class="hits">23</span>
+          
+          <code class="ruby">            while chunk = io.read_nonblock(4096)</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="155">
+          <span class="hits">16</span>
+          
+          <code class="ruby">              if @buffered_echo.nil?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="156">
+          
+          
+          <code class="ruby">                @shell.report chunk, false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby">              else</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="158">
+          <span class="hits">16</span>
+          
+          <code class="ruby">                @buffered_echo &lt;&lt; chunk</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="159">
+          
+          
+          <code class="ruby">              end</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="160">
+          <span class="hits">16</span>
+          
+          <code class="ruby">              @accumulators[io] &lt;&lt;  chunk</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="161">
+          
+          
+          <code class="ruby">            end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="162">
+          
+          
+          <code class="ruby">          rescue IO::WaitReadable =&gt; ex</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="163">
+          
+          
+          <code class="ruby">          rescue EOFError =&gt; ex</code>
+        </li>
+      
+        <li class="covered" data-hits="21" data-linenumber="164">
+          <span class="hits">21</span>
+          
+          <code class="ruby">            @live_ioes.delete(io)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="165">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="166">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="167">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="168">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="169">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="170">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="7fb4890ebebb27b80dfb4d7266990aba77a363b9">
+  <div class="header">
+    <h3>lib/caliph/define-op.rb</h3>
+    <h4><span class="green">94.12 %</span> covered</h4>
+    <div>
+      <b>17</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  module DefineOp</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.included(base)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      base.extend(ClassMethods)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    module ClassMethods</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      def define_chain_op(opname, klass)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="9">
+          <span class="hits">3</span>
+          
+          <code class="ruby">        define_method(opname) do |other|</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="10">
+          <span class="hits">3</span>
+          
+          <code class="ruby">          unless CommandLine === other</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="11">
+          <span class="hits">3</span>
+          
+          <code class="ruby">            other = CommandLine.new(*[*other])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="13">
+          <span class="hits">3</span>
+          
+          <code class="ruby">          chain = nil</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
+          
+          <code class="ruby">          if klass === self</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">            chain = self</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">          else</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="17">
+          <span class="hits">3</span>
+          
+          <code class="ruby">            chain = klass.new</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="18">
+          <span class="hits">3</span>
+          
+          <code class="ruby">            chain.add(self)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="20">
+          <span class="hits">3</span>
+          
+          <code class="ruby">          chain.add(other)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      def define_op(opname)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="25">
+          <span class="hits">3</span>
+          
+          <code class="ruby">        CommandLine.define_chain_op(opname, self)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="496451b376db01b6e14dd6534b93a97e4d4efb93">
+  <div class="header">
+    <h3>lib/caliph/shell-escaped.rb</h3>
+    <h4><span class="red">61.54 %</span> covered</h4>
+    <div>
+      <b>13</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/command-line&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class ShellEscaped &lt; CommandLine</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(cmd)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
+          
+          <code class="ruby">      @escaped = cmd</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def command</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
+          
+          <code class="ruby">      &quot;&#39;&quot; + @escaped.string_format.gsub(/&#39;/,&quot;\&#39;&quot;) + &quot;&#39;&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def command_environment</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">      {}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def name</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">      @name || @escaped.name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def to_s</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
+          
+          <code class="ruby">      command</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="42e9dcb0c4977b40031f265dd54d14d55f9cd0c9">
+  <div class="header">
+    <h3>lib/caliph/shell.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>71</b> relevant lines. 
+      <span class="green"><b>71</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class Error &lt; StandardError; end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class IncompleteCommand &lt; Error; end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class InvalidCommand &lt; Error; end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  # Operates something like a command line shell, except from a Ruby object</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  # perspective.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">  # Basically, a Shell operates as your handle on creating, running and killing</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">  # commands in Caliph.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  #</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class Shell</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_accessor :verbose, :output_stream</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def output_stream</code>
+        </li>
+      
+        <li class="covered" data-hits="28" data-linenumber="16">
+          <span class="hits">28</span>
+          
+          <code class="ruby">      @output_stream ||= $stderr</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def verbose</code>
+        </li>
+      
+        <li class="covered" data-hits="25" data-linenumber="20">
+          <span class="hits">25</span>
+          
+          <code class="ruby">      @verbose ||= false</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    # Reports messages if verbose is true. Used internally to print messages</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">    # about running commands</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def report_verbose(message)</code>
+        </li>
+      
+        <li class="covered" data-hits="25" data-linenumber="26">
+          <span class="hits">25</span>
+          
+          <code class="ruby">      report(message) if verbose</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    # Prints information to {output_stream} which defaults to $stderr.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def report(message, newline=true)</code>
+        </li>
+      
+        <li class="covered" data-hits="28" data-linenumber="31">
+          <span class="hits">28</span>
+          
+          <code class="ruby">      output_stream.print(message + (newline ? &quot;\n&quot; : &quot;&quot;))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">    # Kill processes given a raw pid. In general, prefer</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">    # {CommandRunResult#kill}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">    # @param pid the process id to kill</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def kill_process(pid)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      Process.kill(&quot;INT&quot;, pid)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">    rescue Errno::ESRCH</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="40">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      warn &quot;Couldn&#39;t find process #{pid} to kill it&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def normalize_command_line(*args, &amp;block)</code>
+        </li>
+      
+        <li class="covered" data-hits="21" data-linenumber="44">
+          <span class="hits">21</span>
+          
+          <code class="ruby">      command_line = nil</code>
+        </li>
+      
+        <li class="covered" data-hits="21" data-linenumber="45">
+          <span class="hits">21</span>
+          
+          <code class="ruby">      if args.empty? or args.first == nil</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="46">
+          <span class="hits">7</span>
+          
+          <code class="ruby">        command_line = CommandLine.new</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="47">
+          <span class="hits">15</span>
+          
+          <code class="ruby">      elsif args.all?{|arg| arg.is_a? String}</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        command_line = CommandLine.new(*args)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="50">
+          <span class="hits">13</span>
+          
+          <code class="ruby">        command_line = args.first</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="21" data-linenumber="52">
+          <span class="hits">21</span>
+          
+          <code class="ruby">      yield command_line if block_given?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">      #raise InvalidCommand, &quot;not a command line: #{command_line.inspect}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">      #unless command_line.is_a? CommandLine</code>
+        </li>
+      
+        <li class="covered" data-hits="21" data-linenumber="55">
+          <span class="hits">21</span>
+          
+          <code class="ruby">      raise IncompleteCommand, &quot;cannot run #{command_line}&quot; unless command_line.valid?</code>
+        </li>
+      
+        <li class="covered" data-hits="18" data-linenumber="56">
+          <span class="hits">18</span>
+          
+          <code class="ruby">      command_line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    protected :normalize_command_line</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">    # Given a process ID for a running command and a pair of stdout/stdin</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">    # streams, records the results of the command and returns them in a</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">    # CommandRunResult instance.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def collect_result(command, pid, host_stdout, host_stderr)</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="64">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      result = CommandRunResult.new(pid, command, self)</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="65">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      result.streams = {1 =&gt; host_stdout, 2 =&gt; host_stderr}</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="66">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      return result</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">    # Creates a process to run a command. Handles connecting pipes to stardard</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">    # streams, launching the process and returning a pid for it.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">    # @return [pid, host_stdout, host_stderr] the process id and streams</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">    #   associated with the child process</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def spawn_process(command_line)</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="74">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      host_stdout, cmd_stdout = IO.pipe</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="75">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      host_stderr, cmd_stderr = IO.pipe</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="77">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      pid = Process.spawn(command_line.command_environment, command_line.command, :out =&gt; cmd_stdout, :err =&gt; cmd_stderr)</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="78">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      cmd_stdout.close</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="79">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      cmd_stderr.close</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="81">
+          <span class="hits">16</span>
+          
+          <code class="ruby">      return pid, host_stdout, host_stderr</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">    # Run the command, wait for termination, and collect the results.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby">    # Returns an instance of CommandRunResult that contains the output</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby">    # and exit code of the command.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">    #</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def execute(command_line)</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="89">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      result = collect_result(command_line, *spawn_process(command_line))</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="90">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      result.wait</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="91">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      result</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="92">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
+          
+          
+          <code class="ruby">    # @!group Running Commands</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="95">
+          
+          
+          <code class="ruby">    # Run the command, wait for termination, and collect the results.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby">    # Returns an instance of CommandRunResult that contains the output</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby">    # and exit code of the command. This version {#report}s some information to document that the</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby">    # command is running.  For a terser version, call {#execute} directly</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
+          
+          
+          <code class="ruby">    #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby">    # @!macro normalized</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby">    #   @yield [CommandLine] command about to be run (for configuration)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
+          <code class="ruby">    #   @return [CommandRunResult] used to refer to and inspect the resulting</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="103">
+          
+          
+          <code class="ruby">    #     process</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby">    #   @overload $0(&amp;block)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby">    #   @overload $0(cmd, &amp;block)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="106">
+          
+          
+          <code class="ruby">    #     @param [CommandLine] execute</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby">    #   @overload $0(*cmd_strings, &amp;block)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">    #     @param [Array&lt;String&gt;] a set of strings to parse into a {CommandLine}</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="109">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def run(*args, &amp;block)</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="110">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      command_line = normalize_command_line(*args, &amp;block)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="112">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      report command_line.string_format + &quot; &quot;, false</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="113">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      result = execute(command_line)</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="114">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      report &quot;=&gt; #{result.exit_code}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="115">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      report_verbose result.format_streams</code>
+        </li>
+      
+        <li class="covered" data-hits="12" data-linenumber="116">
+          <span class="hits">12</span>
+          
+          <code class="ruby">      return result</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="117">
+          
+          
+          <code class="ruby">    ensure</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="118">
+          <span class="hits">13</span>
+          
+          <code class="ruby">      report_verbose &quot;&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="119">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="120">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="121">
+          
+          
+          <code class="ruby">    # Completely replace the running process with a command. Good for setting</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="122">
+          
+          
+          <code class="ruby">    # up a command and then running it, without worrying about what happens</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
+          
+          
+          <code class="ruby">    # after that. Uses `exec` under the hood.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="124">
+          
+          
+          <code class="ruby">    # @macro normalized</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="125">
+          
+          
+          <code class="ruby">    # @example Using replace_us</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="126">
+          
+          
+          <code class="ruby">    #   # The last thing we&#39;ll ever do:</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby">    #   shell.run_as_replacement(&#39;echo&#39;, &quot;Everything is okay&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="128">
+          
+          
+          <code class="ruby">    #   # don&#39;t worry, we never get here.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby">    #   shell.run(&quot;sudo&quot;, &quot;shutdown -h now&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="130">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def run_as_replacement(*args, &amp;block)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="131">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      command_line = normalize_command_line(*args, &amp;block)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="133">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      report &quot;Ceding execution to: &quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="134">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      report command_line.string_format</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="135">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      Process.exec(command_line.command_environment, command_line.command)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="136">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="137">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    alias replace_us run_as_replacement</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="138">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="139">
+          
+          
+          <code class="ruby">    # Run the command in the background.  The command can survive the caller.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="140">
+          
+          
+          <code class="ruby">    # Works, for instance, to kick off some long running processes that we</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="141">
+          
+          
+          <code class="ruby">    # don&#39;t care about. Note that this isn&#39;t quite full daemonization - we</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
+          
+          
+          <code class="ruby">    # don&#39;t close the streams of the other process, or scrub its environment or</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="143">
+          
+          
+          <code class="ruby">    # anything.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="144">
+          
+          
+          <code class="ruby">    # @macro normalized</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="145">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def run_detached(*args, &amp;block)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="146">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      command_line = normalize_command_line(*args, &amp;block)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="147">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="148">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      pid, out, err = spawn_process(command_line)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="149">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      Process.detach(pid)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="150">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      return collect_result(command_line, pid, out, err)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="151">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="152">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    alias spin_off run_detached</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="153">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="154">
+          
+          
+          <code class="ruby">    # Run the command in parallel with the parent process - will kill it if it</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="155">
+          
+          
+          <code class="ruby">    # outlasts us. Good for running e.g. a web server that we need to interact</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="156">
+          
+          
+          <code class="ruby">    # with, or the like, without cluttering the system with a bunch of zombies.</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby">    # @macro normalized</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def run_in_background(*args, &amp;block)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="159">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      command_line = normalize_command_line(*args, &amp;block)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="160">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="161">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      pid, out, err = spawn_process(command_line)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="162">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      Process.detach(pid)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="163">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      at_exit do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="164">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        kill_process(pid)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="165">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="166">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      return collect_result(command_line, pid, out, err)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="167">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="168">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    alias background run_in_background</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="169">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="170">
+          
+          
+          <code class="ruby">    # !@endgroup</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="171">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="172">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="6887dfd7da6ca23243759a70a69f020fa7212aee">
+  <div class="header">
+    <h3>lib/caliph/testing/mock-command-line.rb</h3>
+    <h4><span class="red">47.06 %</span> covered</h4>
+    <div>
+      <b>34</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>18</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/command-line&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class MockCommandResult &lt; CommandRunResult</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.create(*args)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
+          
+          <code class="ruby">      if args.length == 1</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
+          
+          <code class="ruby">        args = [args[0], {1 =&gt; &quot;&quot;}]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
+          
+          <code class="ruby">      if String == args[1]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
+          
+          <code class="ruby">        args[1] = {1 =&gt; args[1]}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">      return self.new(*args)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def initialize(code, streams)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
+          
+          <code class="ruby">      @streams = streams</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
+          
+          <code class="ruby">      @exit_code = code</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    attr_reader :exit_code, :streams</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    alias exit_status exit_code</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class CommandLine</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.execute(*args)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
+          
+          <code class="ruby">      fail &quot;Command line executed in specs without &#39;expect_command&#39; or &#39;expect_some_commands&#39;&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  module CommandLineExampleGroup</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    include CommandLineDSL</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    module MockingExecute</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      def execute</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="37">
+          
+          
+          <code class="ruby">        Caliph::CommandLine.execute(command)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.included(group)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
+          
+          <code class="ruby">      group.before :each do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">        @original_execute = Caliph::CommandLine.instance_method(:execute)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
+          
+          <code class="ruby">        unless MockingExecute &gt; Caliph::CommandLine</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
+          
+          <code class="ruby">          Caliph::CommandLine.send(:include, MockingExecute)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="48">
+          
+          
+          <code class="ruby">        Caliph::CommandLine.send(:remove_method, :execute)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="51">
+          
+          
+          <code class="ruby">      group.after :each do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="52">
+          
+          
+          <code class="ruby">        Caliph::CommandLine.send(:define_method, :execute, @original_execute)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">    #Registers indifference as to exactly what commands get called</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def expect_some_commands</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="58">
+          
+          
+          <code class="ruby">      Caliph::CommandLine.should_receive(:execute).any_number_of_times.and_return(MockCommandResult.create(0))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">    #Registers an expectation about a command being run - expectations are</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">    #ordered</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def expect_command(cmd, *result)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="64">
+          
+          
+          <code class="ruby">      Caliph::CommandLine.should_receive(:execute, :expected_from =&gt; caller(1)[0]).with(cmd).ordered.and_return(MockCommandResult.create(*result))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="159b398befedf62dbc64add319edcc94fbdd6c25">
+  <div class="header">
+    <h3>lib/caliph/testing/record-commands.rb</h3>
+    <h4><span class="red">77.27 %</span> covered</h4>
+    <div>
+      <b>22</b> relevant lines. 
+      <span class="green"><b>17</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;caliph/command-line&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module Caliph</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class CommandLine</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @@commands = []</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    alias original_execute execute</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def execute</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
+          
+          <code class="ruby">      result = original_execute</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
+          
+          <code class="ruby">      @@commands &lt;&lt; [command, result]</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
+          
+          <code class="ruby">      return result</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    class &lt;&lt; self</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      attr_accessor :command_recording_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      def command_recording_path</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        @command_recording_path ||= ENV[&#39;CALIPH_CMDREC&#39;]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      def emit_recording</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        io = $stderr</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        if command_recording_path</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          io = File.open(command_recording_path, &quot;w&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">        else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="26">
+          
+          
+          <code class="ruby">          io.puts &quot;Set CALIPH_CMDREC to write to a path&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @@commands.each do |pair|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
+          
+          <code class="ruby">          io.puts &quot;[/#{pair[0]}/, #{[pair[1].exit_code, pair[1].streams].inspect}]&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">at_exit do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  Caliph::CommandLine.emit_recording</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+      </div>
+    </div>
+  </body>
+</html>
