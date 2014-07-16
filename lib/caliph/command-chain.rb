@@ -30,6 +30,18 @@ module Caliph
       end
     end
 
+    def redirect_to(stream, path)
+      @commands.last.redirect_to(stream, path)
+    end
+
+    def redirect_from(path, stream)
+      @commands.last.redirect_from(path, stream)
+    end
+
+    def copy_stream_to(from, to)
+      @commands.last.copy_stream_to(from, to)
+    end
+
     def name
       @name || @commands.last.name
     end

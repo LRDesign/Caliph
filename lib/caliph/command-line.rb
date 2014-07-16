@@ -20,6 +20,7 @@ module Caliph
     end
 
     attr_accessor :name, :executable, :options, :env, :output_stream, :verbose
+    attr_accessor :definition_watcher
     attr_reader :redirections
 
     alias_method :command_environment, :env
@@ -59,8 +60,6 @@ module Caliph
       self
     end
 
-    # Waits for the process to complete. If this takes longer that
-    # {consume_timeout},
     def redirect_from(path, stream)
       @redirections << "#{stream}<#{path}"
     end

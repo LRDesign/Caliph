@@ -15,6 +15,10 @@ module Caliph
             chain = self
           else
             chain = klass.new
+            chain.definition_watcher = definition_watcher
+            unless definition_watcher.nil?
+              definition_watcher.apex = chain
+            end
             chain.add(self)
           end
           chain.add(other)

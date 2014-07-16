@@ -6,7 +6,7 @@ PATH
 PATH
   remote: ../corundum/
   specs:
-    corundum (0.3.8)
+    corundum (0.3.9)
       bundler
       compass (>= 0.12.1)
       mailfactory (~> 1.4.0)
