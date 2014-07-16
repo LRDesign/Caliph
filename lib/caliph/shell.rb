@@ -1,3 +1,5 @@
+require 'caliph/describer'
+
 module Caliph
   class Error < StandardError; end
   class IncompleteCommand < Error; end
@@ -49,7 +51,9 @@ module Caliph
       else
         command_line = args.first
       end
-      yield command_line if block_given?
+      if block_given?
+        command_line = Describer.new(command_line).describe(&block)
+      end
       #raise InvalidCommand, "not a command line: #{command_line.inspect}"
       #unless command_line.is_a? CommandLine
       raise IncompleteCommand, "cannot run #{command_line}" unless command_line.valid?

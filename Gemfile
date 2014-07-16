@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 group :development do
-  gem 'corundum', :path => "../corundum/"
+  gem 'corundum'
   gem 'fuubar'
   gem 'rake'
   gem 'rspec'

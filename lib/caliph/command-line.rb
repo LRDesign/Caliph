@@ -9,10 +9,9 @@ module Caliph
       attr_accessor :output_stream
     end
 
-    def initialize(executable = nil, *options)
+    def initialize(*args)
       @output_stream = self.class.output_stream || $stderr
-      @executable = executable.to_s unless executable.nil?
-      @options = options
+      from(*args)
       @redirections = []
       @env = {}
       @verbose = false
@@ -24,6 +23,11 @@ module Caliph
     attr_reader :redirections
 
     alias_method :command_environment, :env
+
+    def from(executable = nil, *options)
+      @executable = executable.to_s unless executable.nil?
+      @options = options
+    end
 
     def valid?
       !@executable.nil?
