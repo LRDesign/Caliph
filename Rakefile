@@ -17,13 +17,13 @@ module Corundum
     end
     rspec = RSpec.new(core)
     cov = SimpleCov.new(core, rspec) do |cov|
-      cov.threshold = 78
+      cov.threshold = 82
     end
 
     gem = GemBuilding.new(core)
-    cutter = GemCutter.new(core,gem)
-    email = Email.new(core)
-    vc = Git.new(core) do |vc|
+    GemCutter.new(core,gem)
+    Email.new(core)
+    Git.new(core) do |vc|
       vc.branch = "master"
     end
 
@@ -31,7 +31,7 @@ module Corundum
 
     docs = DocumentationAssembly.new(core, yd, rspec, cov)
 
-    pages = GithubPages.new(docs)
+    GithubPages.new(docs)
   end
 end
 
