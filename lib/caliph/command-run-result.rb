@@ -56,6 +56,7 @@ module Caliph
     rescue
       return false
     end
+    alias succeeds? succeeded?
 
     # Nicely formatted output of stdout and stderr - won't be intermixed, which
     # may be different than what you'd see live in the shell
@@ -70,7 +71,7 @@ module Caliph
       when 0
         return exit_code
       else
-        fail "Command #{@command.inspect} failed with exit status #{exit_code}: \n#{format_streams}"
+        fail "Command '#{@command.string_format}' failed with exit status #{exit_code}: \n#{format_streams}"
       end
     end
 

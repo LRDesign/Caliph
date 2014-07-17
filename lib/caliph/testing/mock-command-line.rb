@@ -24,44 +24,49 @@ module Caliph
     alias exit_status exit_code
   end
 
-  class CommandLine
-    def self.execute(*args)
-      fail "Command line executed in specs without 'expect_command' or 'expect_some_commands'"
+  class MockShell
+    def self.execute(command_line, *args)
+      execute_string(command_line.string_format)
+    end
+
+    def self.execute_string(string)
+      fail "Command line executed in specs without 'expect_command' or 'expect_some_commands' (string was: #{string})"
     end
   end
 
   module CommandLineExampleGroup
     include CommandLineDSL
     module MockingExecute
-      def execute
-        Caliph::CommandLine.execute(command)
+      def execute(command)
+        Caliph::MockShell.execute(command)
       end
     end
 
-
     def self.included(group)
       group.before :each do
-        @original_execute = Caliph::CommandLine.instance_method(:execute)
-        unless MockingExecute > Caliph::CommandLine
-          Caliph::CommandLine.send(:include, MockingExecute)
+        @original_execute = Caliph::Shell.instance_method(:execute)
+        @reporting_stream = StringIO.new
+        unless MockingExecute > Caliph::Shell
+          Caliph::Shell.send(:include, MockingExecute)
         end
-        Caliph::CommandLine.send(:remove_method, :execute)
+        Caliph::Shell.send(:remove_method, :execute)
+        Caliph::Shell.any_instance.stub(:output_stream => @reporting_stream)
       end
 
       group.after :each do
-        Caliph::CommandLine.send(:define_method, :execute, @original_execute)
+        Caliph::Shell.send(:define_method, :execute, @original_execute)
       end
     end
 
     #Registers indifference as to exactly what commands get called
     def expect_some_commands
-      Caliph::CommandLine.should_receive(:execute).any_number_of_times.and_return(MockCommandResult.create(0))
+      Caliph::MockShell.should_receive(:execute_string).any_number_of_times.and_return(MockCommandResult.create(0))
     end
 
     #Registers an expectation about a command being run - expectations are
     #ordered
     def expect_command(cmd, *result)
-      Caliph::CommandLine.should_receive(:execute, :expected_from => caller(1)[0]).with(cmd).ordered.and_return(MockCommandResult.create(*result))
+      Caliph::MockShell.should_receive(:execute_string, :expected_from => caller(1)[0]).with(cmd).ordered.and_return(MockCommandResult.create(*result))
     end
   end
 end

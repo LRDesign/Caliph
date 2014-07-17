@@ -21,5 +21,9 @@ module Caliph
     def to_s
       command
     end
+
+    def valid?
+      @escaped.valid?
+    end
   end
 end

@@ -56,7 +56,7 @@ module Caliph
       end
       #raise InvalidCommand, "not a command line: #{command_line.inspect}"
       #unless command_line.is_a? CommandLine
-      raise IncompleteCommand, "cannot run #{command_line}" unless command_line.valid?
+      raise IncompleteCommand, "cannot run #{command_line.inspect}" unless command_line.valid?
       command_line
     end
     protected :normalize_command_line

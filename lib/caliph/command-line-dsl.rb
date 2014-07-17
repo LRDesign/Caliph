@@ -10,7 +10,13 @@ module Caliph
     end
 
     def escaped_command(*args, &block)
-      ShellEscaped.new(CommandLine.new(*args, &block))
+      command = nil
+      if args.length == 1 and args.first.is_a? CommandLine
+        command = args.first
+      else
+        command = cmd(*args, &block)
+      end
+      ShellEscaped.new(command)
     end
   end
 end
